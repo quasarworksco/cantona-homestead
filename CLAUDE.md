@@ -12,16 +12,17 @@ Haz estas preguntas **en un solo mensaje** y espera la respuesta. No inventes da
 6. **Idiomas:** ¿solo español, solo inglés o bilingüe ES/EN con botón para cambiar?
 
 ## Datos que ya tenemos
-- **Empresa:** cantona homestead
-- **Rubro / qué hace:** _pendiente: pregúntalo antes de diseñar_
-- **Estilo visual:** _pendiente: pregúntalo antes de diseñar_
-- **Página de ejemplo:** _pendiente: pregúntalo antes de diseñar_
-- **Correo:** _pendiente: pregúntalo antes de diseñar_
-- **Teléfono / WhatsApp:** _pendiente: pregúntalo antes de diseñar_
-- **Redes sociales:** _pendiente: pregúntalo antes de diseñar_
-- **Idiomas:** _pendiente: pregúntalo antes de diseñar_
-- **Notas:** _pendiente: pregúntalo antes de diseñar_
-- **Logo:** _no se subió: pídelo_
+- **Empresa:** Cantona Homestead (ver `PRODUCT.md` para el detalle completo)
+- **Rubro / qué hace:** granja familiar de 40 acres en Tomball, TX: zoológico interactivo, juegos interiores y exteriores (Cantona Ranch), fiestas de cumpleaños, excursiones escolares, Spirit Day y farmers market.
+- **Estilo visual:** granja editorial cálida, basada en el logo (crema, café oscuro, verde olivo, dorado). Tipografías Besley + Figtree.
+- **Página de ejemplo:** el sitio actual https://cantonahomestead.com (este repo es una propuesta de rediseño).
+- **Correo:** hello@cantonahomestead.com
+- **Teléfono / WhatsApp:** (832) 303-3534 · https://wa.me/18323033534
+- **Dirección:** 24706 FM 2978, Tomball, TX 77375. Sáb 10 AM-5 PM, Dom 10 AM-3 PM.
+- **Redes sociales:** facebook.com/Cantonahomestead · instagram.com/cantonahomestead
+- **Idiomas:** bilingüe, inglés primero, con botón EN/ES.
+- **Notas:** las reservas, boletos, solicitudes y portal privado siguen en el sistema actual de cantonahomestead.com; todos los botones de compra/reserva enlazan allí. Auditoría del sitio original: 87/100, velocidad móvil 62, sin WhatsApp, sin sitemap, 3 de 7 imágenes sin alt.
+- **Logo:** `assets/logo.webp` (fondo transparente) y favicon en `assets/` + `favicon.ico`.
 
 ## Skills de diseño instaladas (úsalas)
 Este repositorio trae en `.claude/skills/` el kit de diseño de DGP. Úsalo en este orden:

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /entrega/
+Sitemap: https://quasarworksco.github.io/cantona-homestead/sitemap.xml

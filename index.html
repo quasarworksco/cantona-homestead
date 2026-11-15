@@ -1,28 +1,1105 @@
 <!doctype html>
-<!--
-  cantona homestead · sitio en construcción por DGP Global Group.
-  Para Claude: lee CLAUDE.md antes de empezar. Diseño premium basado en el logo, sin emojis (solo iconos SVG),
-  pregunta el estilo visual, la página de ejemplo y los datos de contacto y redes que falten, y trabaja sobre eso.
--->
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>cantona homestead · Próximamente</title>
-<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petting Zoo &amp; Birthday Parties in Tomball, TX | Cantona Homestead</title>
+<meta name="description" content="Cantona Homestead is a 40-acre family farm in Tomball, Texas with a petting zoo, indoor and outdoor play, kids' birthday parties, field trips and a free farmers market. Minutes from The Woodlands and Spring.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cantonahomestead.com/">
+<meta name="theme-color" content="#FAF3E1">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cantona Homestead">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta property="og:title" content="Petting Zoo &amp; Birthday Parties in Tomball, TX | Cantona Homestead">
+<meta property="og:description" content="A real 40-acre Texas farm with a petting zoo, indoor and outdoor play, birthday parties, field trips and a free farmers market. Minutes from The Woodlands.">
+<meta property="og:url" content="https://cantonahomestead.com/">
+<meta property="og:image" content="https://quasarworksco.github.io/cantona-homestead/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A child watches the cows over the fence at Cantona Homestead">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero-800.webp 800w, assets/hero.webp 1500w" imagesizes="(min-width: 900px) 48vw, 100vw" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..800;1,500&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "TouristAttraction"],
+  "@id": "https://cantonahomestead.com#business",
+  "name": "Cantona Homestead",
+  "url": "https://cantonahomestead.com",
+  "logo": "https://quasarworksco.github.io/cantona-homestead/assets/icon-512.png",
+  "image": "https://quasarworksco.github.io/cantona-homestead/assets/og.jpg",
+  "description": "A 40-acre family farm in Tomball, Texas with a petting zoo, indoor and outdoor play, kids' birthday parties, field trips and a free farmers market.",
+  "telephone": "+18323033534",
+  "email": "hello@cantonahomestead.com",
+  "priceRange": "$10-$18",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24706 FM 2978",
+    "addressLocality": "Tomball",
+    "addressRegion": "TX",
+    "postalCode": "77375",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "15:00" }
+  ],
+  "areaServed": ["Tomball", "The Woodlands", "Spring", "Magnolia", "North Houston"],
+  "sameAs": ["https://www.facebook.com/Cantonahomestead", "https://www.instagram.com/cantonahomestead/"]
+}
+</script>
+
 <style>
-  :root { color-scheme: light dark; }
-  body { margin:0; min-height:100vh; display:grid; place-items:center; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:#0b1220; color:#e2e8f0; text-align:center; padding:24px; box-sizing:border-box; }
-  img { max-width:220px; max-height:140px; object-fit:contain; margin-bottom:28px; }
-  h1 { font-size:clamp(26px,5vw,40px); margin:0 0 10px; font-weight:700; letter-spacing:-.02em; }
-  p { margin:0; color:#94a3b8; }
+:root {
+  --paper: #FAF3E1;
+  --paper-deep: #F3E7C6;
+  --ribbon: #F6E2AE;
+  --card: #FFFCF3;
+  --ink: #2B1A08;
+  --ink-soft: #5B4630;
+  --line: #D9C79C;
+  --olive: #56602A;
+  --olive-deep: #343C1A;
+  --olive-tint: #ECEBD3;
+  --gold: #C48A1F;
+  --gold-soft: #EBC56B;
+  --wa: #0E7A3E;
+
+  --display: "Besley", "Rockwell", Georgia, serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --gutter: clamp(20px, 5vw, 56px);
+  --section: clamp(72px, 11vw, 148px);
+  --radius: 18px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.62 var(--body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection { background: var(--gold-soft); color: var(--ink); }
+html { scrollbar-color: #B9A678 var(--paper); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2.5px solid var(--olive); outline-offset: 3px; border-radius: 6px; }
+.on-dark :focus-visible { outline-color: var(--gold-soft); }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.3vw, 4.6rem); line-height: 1.02; letter-spacing: -0.03em; }
+h2 { font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1.06; }
+h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.2; letter-spacing: -0.01em; }
+p { text-wrap: pretty; }
+.lede { font-size: clamp(1.1rem, 1.5vw, 1.28rem); line-height: 1.55; color: var(--ink-soft); max-width: 58ch; }
+.muted { color: var(--ink-soft); }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+
+.wrap { width: min(1240px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+section { padding-block: var(--section); }
+.icon { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.icon.solid { fill: currentColor; stroke: none; }
+
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 10px; }
+.skip:focus { top: 12px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 26px;
+  border-radius: 999px; border: 1.5px solid var(--ink);
+  font-weight: 600; font-size: 1rem; line-height: 1; text-decoration: none; white-space: nowrap;
+  transition: transform 160ms var(--ease-out), background-color 180ms ease, color 180ms ease, box-shadow 220ms var(--ease-out);
+}
+.btn:active { transform: scale(0.97); }
+.btn .icon { transition: transform 220ms var(--ease-out); }
+.btn-primary { background: var(--ink); color: var(--paper); box-shadow: 0 2px 0 rgba(43,26,8,.0), 0 10px 24px -14px rgba(43,26,8,.55); }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-gold { background: var(--gold-soft); color: var(--ink); border-color: var(--gold-soft); }
+.on-dark .btn-ghost { border-color: rgba(250,243,225,.55); color: var(--paper); }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: .95rem; }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { background: var(--olive-deep); border-color: var(--olive-deep); box-shadow: 0 16px 28px -16px rgba(43,26,8,.7); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .on-dark .btn-ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .btn-gold:hover { background: var(--paper); border-color: var(--paper); }
+  .btn:hover .icon.arrow { transform: translateX(3px); }
+}
+.textlink { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 0.3em; min-height: 44px; transition: text-decoration-color 160ms ease; }
+@media (hover: hover) and (pointer: fine) { .textlink:hover { text-decoration-color: currentColor; } }
+
+/* Header */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.header.scrolled { border-bottom-color: var(--line); box-shadow: 0 10px 30px -24px rgba(43,26,8,.5); }
+.header-in { display: flex; align-items: center; gap: 20px; height: 76px; }
+.brand { display: inline-flex; align-items: center; flex: none; }
+.brand img { width: 112px; height: auto; }
+.nav { display: none; margin-inline: auto; gap: clamp(14px, 1.8vw, 28px); }
+.nav a { text-decoration: none; font-weight: 500; font-size: .96rem; padding: 12px 2px; position: relative; white-space: nowrap; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .nav a:hover::after { transform: scaleX(1); } }
+.header-tools { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.lang { display: inline-flex; border: 1.5px solid var(--ink); border-radius: 999px; padding: 3px; position: relative; isolation: isolate; }
+.lang button { min-width: 42px; height: 36px; border-radius: 999px; font-weight: 700; font-size: .82rem; letter-spacing: .04em; position: relative; z-index: 1; transition: color 200ms ease; }
+.lang button[aria-pressed="true"] { color: var(--paper); }
+.lang::before { content: ""; position: absolute; z-index: 0; top: 3px; left: 3px; width: 42px; height: 36px; border-radius: 999px; background: var(--ink); transition: transform 240ms var(--ease-out); }
+.lang[data-lang="es"]::before { transform: translateX(42px); }
+.header .btn { display: none; }
+.menu-btn { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 999px; border: 1.5px solid var(--ink); transition: transform 160ms var(--ease-out); }
+.menu-btn:active { transform: scale(0.95); }
+.menu-btn .icon { width: 22px; height: 22px; }
+.menu-btn .i-close, .menu-btn[aria-expanded="true"] .i-open { display: none; }
+.menu-btn[aria-expanded="true"] .i-close { display: block; }
+
+.mobile-nav {
+  position: fixed; inset: 76px 0 0 0; z-index: 49;
+  background: var(--paper); padding: 12px var(--gutter) 32px; overflow-y: auto;
+  display: flex; flex-direction: column;
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: opacity 180ms ease, transform 240ms var(--ease-out), visibility 0s linear 240ms;
+}
+.mobile-nav.open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.mobile-nav a.m-link { display: flex; align-items: center; justify-content: space-between; padding: 17px 0; border-bottom: 1px solid var(--line); font: 600 1.45rem/1.2 var(--display); text-decoration: none; letter-spacing: -0.01em; }
+.mobile-nav .btn { margin-top: 14px; }
+.mobile-nav .btn:first-of-type { margin-top: 28px; }
+
+@media (min-width: 1080px) {
+  .nav { display: flex; }
+  .header .btn { display: inline-flex; }
+  .menu-btn, .mobile-nav { display: none; }
+  .header-tools { margin-left: 0; }
+  .brand img { width: 128px; }
+}
+
+/* Hero */
+.hero { padding-block: clamp(28px, 5vw, 64px) clamp(56px, 8vw, 104px); }
+.hero-grid { display: grid; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero h1 .ln { display: block; white-space: nowrap; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.hero h1 .ln > span { display: block; }
+.hero .lede { margin-top: clamp(18px, 2.4vw, 28px); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(24px, 3vw, 36px); }
+.hero-facts { margin-top: clamp(26px, 3.4vw, 40px); padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: .98rem; }
+.hero-facts li { display: inline-flex; align-items: center; gap: 9px; }
+.hero-facts .icon { color: var(--olive); }
+.hero-art { position: relative; }
+.hero-photo { border-radius: 999px 999px var(--radius) var(--radius); overflow: hidden; aspect-ratio: 4 / 5; background: var(--paper-deep); box-shadow: 0 40px 60px -44px rgba(43,26,8,.6); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+.hero-inset { position: absolute; left: -4%; bottom: -6%; width: 34%; border-radius: 14px; overflow: hidden; border: 6px solid var(--paper); box-shadow: 0 24px 40px -26px rgba(43,26,8,.7); aspect-ratio: 3 / 4; }
+.hero-inset img { width: 100%; height: 100%; object-fit: cover; }
+.sprig { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; color: var(--olive); }
+.hero-sprig { position: absolute; right: -3%; top: -2%; width: clamp(48px, 6vw, 76px); height: auto; transform: rotate(14deg); }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+}
+@media (max-width: 899px) {
+  .hero-art { width: min(100%, 520px); margin-inline: auto; }
+  .hero-photo { aspect-ratio: 4 / 4.6; }
+  .cta-row .btn { flex: 1 1 100%; }
+}
+
+/* Ticket */
+.visit { background: var(--paper-deep); }
+.visit-head { display: grid; gap: 18px; margin-bottom: clamp(32px, 4.5vw, 56px); }
+@media (min-width: 900px) { .visit-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 56px; } }
+.ticket { --notch: 15px; position: relative; background: var(--card); border: 1.5px solid var(--ink); border-radius: var(--radius); display: grid; box-shadow: 0 30px 50px -40px rgba(43,26,8,.6); }
+.ticket > div { padding: clamp(24px, 3.6vw, 44px); }
+.ticket-stub { border-top: 2px dashed var(--ink); position: relative; display: flex; flex-direction: column; gap: 20px; justify-content: space-between; }
+.ticket-stub::before, .ticket-stub::after { content: ""; position: absolute; width: calc(var(--notch) * 2); height: calc(var(--notch) * 2); border-radius: 50%; background: var(--paper-deep); border: 1.5px solid var(--ink); top: calc(var(--notch) * -1 - 1px); }
+.ticket-stub::before { left: calc(var(--notch) * -1 - 1.5px); clip-path: inset(0 0 0 50%); }
+.ticket-stub::after { right: calc(var(--notch) * -1 - 1.5px); clip-path: inset(0 50% 0 0); }
+.ticket-main { display: grid; gap: 28px; }
+.hours { display: grid; gap: 2px; }
+.hours div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.hours dt { font: 700 clamp(1.35rem, 2.4vw, 1.8rem)/1.1 var(--display); letter-spacing: -0.01em; }
+.hours dd { font-weight: 600; font-size: 1.1rem; }
+.included { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.included li { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
+.included .icon { color: var(--olive); }
+.prices { display: grid; gap: 0; }
+.prices div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 9px 0; }
+.prices dt { color: var(--ink-soft); }
+.prices dd { font: 700 1.7rem/1 var(--display); }
+.ticket-note { font-size: .93rem; color: var(--ink-soft); margin-top: 18px; max-width: 78ch; }
+@media (min-width: 860px) {
+  .ticket { grid-template-columns: 1.5fr 1fr; }
+  .ticket-main { grid-template-columns: 1fr; }
+  .ticket-stub { border-top: 0; border-left: 2px dashed var(--ink); }
+  .ticket-stub::before, .ticket-stub::after { left: calc(var(--notch) * -1 - 1px); right: auto; }
+  .ticket-stub::before { top: calc(var(--notch) * -1 - 1.5px); clip-path: inset(50% 0 0 0); }
+  .ticket-stub::after { top: auto; bottom: calc(var(--notch) * -1 - 1.5px); clip-path: inset(0 0 50% 0); }
+}
+
+/* Birthdays */
+.split-head { display: grid; gap: 20px; margin-bottom: clamp(36px, 5vw, 64px); }
+@media (min-width: 900px) { .split-head { grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: end; } }
+.packages { border-top: 1.5px solid var(--ink); }
+.pkg { display: grid; grid-template-columns: 76px 1fr; grid-template-areas: "img name" "img meta" "price price" "cta cta"; gap: 6px 16px; padding: 24px 0; border-bottom: 1px solid var(--line); align-items: center; }
+.pkg img { grid-area: img; width: 76px; height: 76px; object-fit: cover; border-radius: 12px; align-self: start; }
+.pkg h3 { grid-area: name; }
+.pkg .pkg-meta { grid-area: meta; color: var(--ink-soft); font-size: .98rem; }
+.pkg .pkg-price { grid-area: price; display: flex; align-items: baseline; gap: 10px; margin-top: 10px; }
+.pkg .pkg-price b { font: 700 2.3rem/1 var(--display); letter-spacing: -0.02em; }
+.pkg .btn { grid-area: cta; margin-top: 8px; }
+@media (min-width: 820px) {
+  .pkg { grid-template-columns: 104px minmax(0, 1.5fr) minmax(0, 1fr) auto; grid-template-areas: "img name price cta" "img meta price cta"; gap: 4px 28px; padding: 28px 0; }
+  .pkg img { width: 104px; height: 104px; }
+  .pkg .pkg-price { margin-top: 0; flex-direction: column; gap: 4px; align-items: flex-start; }
+  .pkg .btn { margin-top: 0; }
+}
+.bday-more { display: grid; gap: 40px; margin-top: clamp(40px, 5vw, 64px); }
+@media (min-width: 900px) { .bday-more { grid-template-columns: 1fr 1fr 1.05fr; gap: 56px; align-items: start; } }
+.ticks li { display: flex; gap: 12px; padding: 8px 0; }
+.ticks .icon { color: var(--olive); margin-top: .2em; }
+.bday-more h3 { margin-bottom: 12px; }
+.bday-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 2; }
+.bday-photo img { width: 100%; height: 100%; object-fit: cover; }
+.bday-actions { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-top: clamp(32px, 4vw, 48px); }
+
+/* Ranch explorer */
+.ranch { background: var(--olive-tint); }
+.explorer { display: grid; gap: 24px; }
+.spots { display: flex; gap: 8px; overflow-x: auto; padding: 4px var(--gutter) 10px; margin-inline: calc(var(--gutter) * -1); scrollbar-width: none; scroll-snap-type: x proximity; }
+.spots::-webkit-scrollbar { display: none; }
+.spot { flex: none; scroll-snap-align: start; min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--olive-deep); font-weight: 600; white-space: nowrap; transition: background-color 160ms ease, color 160ms ease, transform 160ms var(--ease-out); }
+.spot:active { transform: scale(0.97); }
+.spot[aria-pressed="true"] { background: var(--olive-deep); color: var(--paper); }
+.spot small { display: none; }
+.stage { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3.4; background: #D8D8B8; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; filter: blur(8px); transform: scale(1.03); transition: opacity 320ms ease, filter 320ms ease, transform 520ms var(--ease-out); }
+.stage img.on { opacity: 1; filter: none; transform: none; }
+.stage-cap { min-height: 7.2em; }
+.stage-cap h3 { margin-bottom: 6px; }
+.also { margin-top: clamp(28px, 4vw, 44px); padding-top: 22px; border-top: 1px solid #C9CBA5; display: grid; gap: 18px; }
+@media (min-width: 900px) {
+  .explorer { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 56px; align-items: start; }
+  .spots { flex-direction: column; overflow: visible; padding: 0; margin: 0; gap: 0; border-top: 1.5px solid var(--olive-deep); }
+  .spot { border: 0; border-bottom: 1px solid #C9CBA5; border-radius: 0; padding: 17px 4px; min-height: 0; text-align: left; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; font: 700 clamp(1.4rem, 2.1vw, 1.9rem)/1.15 var(--display); letter-spacing: -0.015em; color: #5A6238; transition: color 160ms ease, padding-left 260ms var(--ease-out); }
+  .spot small { display: inline; font: 600 .78rem/1 var(--body); letter-spacing: .06em; text-transform: uppercase; }
+  .spot[aria-pressed="true"] { background: none; color: var(--olive-deep); padding-left: 14px; }
+  .spot:active { transform: none; }
+  .stage { aspect-ratio: 5 / 4; }
+  .also { grid-template-columns: 1fr auto; align-items: center; }
+}
+@media (hover: hover) and (pointer: fine) { .spot:hover { color: var(--olive-deep); } }
+
+/* Groups */
+.groups-grid { display: grid; gap: clamp(48px, 6vw, 72px); }
+.group h3 { font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.02em; margin-bottom: 14px; }
+.facts { margin: 22px 0 26px; border-top: 1.5px solid var(--ink); }
+.facts div { display: grid; grid-template-columns: minmax(96px, .42fr) 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.facts dt { color: var(--ink-soft); }
+.facts dd { font-weight: 600; }
+.groups-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 7; margin-bottom: clamp(40px, 5vw, 64px); }
+.groups-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+@media (min-width: 900px) { .groups-grid { grid-template-columns: 1fr 1fr; gap: 88px; } }
+@media (max-width: 640px) { .groups-photo { aspect-ratio: 4 / 3; } }
+
+/* Market */
+.market { background: var(--olive-deep); color: var(--paper); }
+.market .lede, .market .muted { color: #D9D9BC; }
+.market-grid { display: grid; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.market-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; }
+.market-photo img { width: 100%; height: 100%; object-fit: cover; }
+.market-date { display: flex; align-items: center; gap: 18px; margin: 26px 0 8px; }
+.cal { flex: none; width: 84px; border-radius: 14px; overflow: hidden; background: var(--paper); color: var(--ink); text-align: center; }
+.cal span { display: block; background: var(--gold-soft); font-weight: 700; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; padding: 6px 0; }
+.cal b { display: block; font: 700 2.3rem/1.25 var(--display); }
+.market-date p { font-size: 1.1rem; line-height: 1.45; }
+.market-date strong { display: block; font: 700 1.35rem/1.25 var(--display); }
+@media (min-width: 900px) { .market-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Museum */
+.museum-grid { display: grid; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.museum figure { position: relative; }
+.museum figure img { border-radius: var(--radius); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.museum figcaption { font-size: .86rem; color: var(--ink-soft); margin-top: 10px; }
+.status { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .93rem; color: var(--olive-deep); background: var(--olive-tint); border-radius: 999px; padding: 7px 14px; margin-top: 20px; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+@media (min-width: 900px) { .museum-grid { grid-template-columns: 1.1fr .9fr; } }
+
+/* About */
+.about { background: var(--ribbon); }
+.about blockquote { margin: 0; font: italic 500 clamp(1.5rem, 3.3vw, 2.6rem)/1.28 var(--display); letter-spacing: -0.015em; max-width: 26ch; text-wrap: balance; }
+.about-grid { display: grid; gap: clamp(36px, 6vw, 88px); }
+.values { border-top: 1.5px solid var(--ink); }
+.values div { display: grid; gap: 2px 20px; padding: 14px 0; border-bottom: 1px solid #DCC68D; }
+.values dt { font: 700 1.2rem/1.3 var(--display); }
+.values dd { color: var(--ink-soft); }
+@media (min-width: 560px) { .values div { grid-template-columns: 9.5rem 1fr; align-items: baseline; } }
+@media (min-width: 960px) { .about-grid { grid-template-columns: .95fr 1.05fr; } .about blockquote { position: sticky; top: 120px; } }
+
+/* Gallery */
+.gallery { padding-bottom: 0; }
+.gallery-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.gal-nav { display: flex; gap: 8px; }
+.gal-nav button { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; transition: transform 160ms var(--ease-out), background-color 160ms ease, color 160ms ease, opacity 160ms ease; }
+.gal-nav button:active { transform: scale(0.94); }
+.gal-nav button:disabled { opacity: .35; cursor: default; }
+@media (hover: hover) and (pointer: fine) { .gal-nav button:not(:disabled):hover { background: var(--ink); color: var(--paper); } }
+.strip { --edge: max(var(--gutter), (100vw - 1240px) / 2); display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 var(--edge) 18px; scroll-padding-inline: var(--edge); scrollbar-width: thin; scrollbar-color: #B9A678 transparent; }
+.strip figure { flex: none; height: clamp(280px, 42vw, 460px); scroll-snap-align: start; border-radius: 14px; overflow: hidden; background: var(--paper-deep); }
+.strip img { height: 100%; width: auto; max-width: none; }
+
+/* Directions */
+.dir-grid { display: grid; gap: clamp(36px, 5vw, 72px); }
+.contact-list { margin-top: 28px; border-top: 1.5px solid var(--ink); }
+.contact-list a { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: 1.08rem; min-height: 60px; }
+.contact-list a span { display: block; }
+.contact-list a small { display: block; font-weight: 400; font-size: .9rem; color: var(--ink-soft); }
+.contact-list .icon { color: var(--olive); width: 22px; height: 22px; }
+.contact-list .icon.arrow { margin-left: auto; color: var(--ink); width: 18px; height: 18px; transition: transform 220ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .contact-list a:hover .arrow { transform: translateX(4px); } }
+.routes { border-top: 1.5px solid var(--ink); }
+.routes details { border-bottom: 1px solid var(--line); }
+.routes summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 18px 0; font: 700 1.25rem/1.25 var(--display); }
+.routes summary::-webkit-details-marker { display: none; }
+.routes summary small { font: 500 .93rem/1 var(--body); color: var(--ink-soft); margin-left: auto; white-space: nowrap; }
+.routes summary .icon { align-self: center; transition: transform 240ms var(--ease-out); }
+.routes details[open] summary .icon { transform: rotate(45deg); }
+.routes ol { list-style: decimal; padding: 0 0 20px 1.3em; color: var(--ink-soft); }
+.routes ol li { padding: 3px 0 3px 4px; }
+.routes ol li::marker { color: var(--olive); font-weight: 700; }
+.arrive { margin-top: 22px; font-size: .96rem; color: var(--ink-soft); }
+.dir-right h3 { margin-bottom: 14px; }
+@media (min-width: 900px) { .dir-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Closing CTA */
+.closing { text-align: center; padding-block: clamp(64px, 9vw, 120px); }
+.closing h2 { max-width: 16ch; margin-inline: auto; }
+.closing .cta-row { justify-content: center; }
+.closing-sprig { display: block; width: 44px; height: auto; margin: 0 auto 20px; }
+
+/* Footer */
+.footer { background: var(--ink); color: #EADFC4; padding-block: clamp(56px, 7vw, 88px) 28px; }
+.footer a { text-decoration: none; }
+.foot-grid { display: grid; gap: 40px; }
+.foot-brand img { width: 190px; }
+.foot-brand p { margin-top: 16px; max-width: 30ch; color: #CDBE9C; }
+.footer h2 { font: 700 .8rem/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 14px; }
+.footer li a { display: inline-block; padding: 7px 0; color: #EADFC4; transition: color 160ms ease; }
+@media (hover: hover) and (pointer: fine) { .footer li a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--gold-soft); } }
+.social { display: flex; gap: 10px; margin-top: 18px; }
+.social a { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(234,223,196,.4); display: grid; place-items: center; transition: background-color 160ms ease, color 160ms ease, transform 160ms var(--ease-out); }
+.social a:active { transform: scale(0.94); }
+@media (hover: hover) and (pointer: fine) { .social a:hover { background: var(--paper); color: var(--ink); } }
+.foot-base { margin-top: clamp(40px, 5vw, 64px); padding-top: 22px; border-top: 1px solid rgba(234,223,196,.2); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: .9rem; color: #CDBE9C; padding-right: 72px; }
+.foot-base a { text-decoration: underline; text-decoration-color: rgba(234,223,196,.45); }
+@media (min-width: 760px) { .foot-grid { grid-template-columns: 1.3fr 1fr 1fr 1.1fr; gap: 48px; } }
+
+/* WhatsApp */
+.wa { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 40; display: inline-flex; align-items: center; gap: 10px; height: 58px; padding: 0 20px 0 16px; border-radius: 999px; background: var(--wa); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 14px 30px -12px rgba(14,60,30,.7); transition: transform 180ms var(--ease-out), box-shadow 200ms ease; }
+.wa .icon { width: 28px; height: 28px; }
+.wa:active { transform: scale(0.96); }
+@media (hover: hover) and (pointer: fine) { .wa:hover { transform: translateY(-2px); box-shadow: 0 20px 34px -14px rgba(14,60,30,.8); } }
+@media (max-width: 560px) { .wa { padding: 0; width: 58px; justify-content: center; } .wa span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } }
+
+/* Motion: content is visible by default; .js enables entrances */
+.js .hero h1 .ln > span { transform: translateY(105%); animation: rise 900ms var(--ease-out) forwards; }
+.js .hero h1 .ln:nth-child(2) > span { animation-delay: 70ms; }
+.js .hero h1 .ln:nth-child(3) > span { animation-delay: 140ms; }
+.js .hero .fade { opacity: 0; transform: translateY(10px); animation: fadeup 700ms var(--ease-out) forwards; animation-delay: calc(260ms + var(--i, 0) * 70ms); }
+.js .hero-photo { clip-path: inset(100% 0 0 0); animation: unveil 1200ms var(--ease-out) 120ms forwards; }
+.js .hero-photo img { transform: scale(1.12); animation: settle 1600ms var(--ease-out) 120ms forwards; }
+.js .hero-inset { opacity: 0; transform: translateY(18px) rotate(-3deg); animation: inset 800ms var(--ease-out) 760ms forwards; }
+.js .hero-sprig path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1400ms var(--ease-out) 700ms forwards; }
+@keyframes rise { to { transform: none; } }
+@keyframes fadeup { to { opacity: 1; transform: none; } }
+@keyframes unveil { to { clip-path: inset(0 0 0 0); } }
+@keyframes settle { to { transform: none; } }
+@keyframes inset { to { opacity: 1; transform: rotate(-3deg); } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.hero-inset { transform: rotate(-3deg); }
+
+.js [data-r] { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 800ms var(--ease-out); transition-delay: calc(var(--d, 0) * 70ms); }
+.js [data-r="img"] { opacity: 1; transform: none; }
+.js [data-r="img"] img { clip-path: inset(0 0 100% 0); transform: scale(1.08); transition: clip-path 1000ms var(--ease-out), transform 1400ms var(--ease-out); }
+.js [data-r].in { opacity: 1; transform: none; }
+.js [data-r="img"].in img { clip-path: inset(0 0 0 0); transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .hero h1 .ln > span, .js .hero .fade, .js .hero-photo, .js .hero-photo img, .js .hero-inset, .js .hero-sprig path { animation: none; opacity: 1; transform: none; clip-path: none; stroke-dashoffset: 0; }
+  .js .hero-inset { transform: rotate(-3deg); }
+  .js [data-r], .js [data-r="img"], .js [data-r="img"] img { transform: none; clip-path: none; transition: opacity 300ms ease; }
+  .stage img { transform: none; filter: none; transition: opacity 200ms ease; }
+  .mobile-nav { transform: none; }
+}
 </style>
 </head>
 <body>
-  <main>
-    
-    <h1>cantona homestead</h1>
-    <p>Nuestro sitio web está en construcción.</p>
-  </main>
+<script>document.documentElement.classList.add('js')</script>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9V6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5V9a3 3 0 0 0 0 6v2.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5V15a3 3 0 0 0 0-6ZM14 5v3M14 11v2M14 16v3"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 21h16M5 21v-8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8M5 16c1.2 0 1.2 1 2.4 1s1.2-1 2.3-1 1.2 1 2.3 1 1.2-1 2.3-1 1.2 1 2.4 1 1.1-1 2.3-1M12 11V8M12 4.2c.8.9 1.2 1.5 1.2 2.1a1.2 1.2 0 0 1-2.4 0c0-.6.4-1.2 1.2-2.1Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.500l1.700 4.300-2.100 1.500a12 12 0 0 0 6.100 6.100l1.500-2.100 4.300 1.700V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.500 7 8.500 6 8.500-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.500 4.500 4.500L19 7.500"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><path d="M20.500 3.500 3.500 10.200l6.800 3.500 3.500 6.800 6.700-17Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="7" cy="9.500" r="1.800"/><circle cx="12" cy="6.500" r="1.800"/><circle cx="17" cy="9.500" r="1.800"/><path d="M8 16.500c0-2.300 1.800-4.200 4-4.200s4 1.900 4 4.200c0 1.400-1.100 2.300-2.400 2.300-.6 0-1-.300-1.600-.300s-1 .300-1.600.300C9.100 18.800 8 17.900 8 16.500Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.500v2M12 19.500v2M2.500 12h2M19.500 12h2M5.300 5.300l1.400 1.400M17.300 17.300l1.400 1.400M5.300 18.700l1.400-1.400M17.300 6.700l1.400-1.400"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3.500 11 8.500-7 8.500 7M5.500 9.500V20h13V9.500M10 20v-5.500h4V20"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.030-.967-.273-.099-.471-.148-.670.150-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.150-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.010-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.360.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.870 9.870 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 0 1-1.510-5.260c.001-5.450 4.436-9.884 9.888-9.884 2.640 0 5.122 1.030 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.450-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.050 0C5.495 0 .160 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 0 0-3.480-8.413Z"/></symbol>
+  <symbol id="i-sprig" viewBox="0 0 64 96"><path pathLength="1" d="M32 94C32 70 30 46 34 6"/><path pathLength="1" d="M32 78c-10-2-17-9-19-19 10 1 17 8 19 19Z"/><path pathLength="1" d="M33 62c10-2 16-9 18-19-10 2-16 9-18 19Z"/><path pathLength="1" d="M32 48c-9-3-14-10-15-19 9 2 14 9 15 19Z"/><path pathLength="1" d="M33 34c8-3 12-9 13-17-8 3-12 9-13 17Z"/><path pathLength="1" d="M33 20c-5-3-7-8-6-14 5 3 7 8 6 14Z"/></symbol>
+</svg>
+
+<a class="skip" href="#main" data-i="skip">Skip to content</a>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Cantona Homestead">
+      <img src="assets/logo-320.webp" width="320" height="162" alt="Cantona Homestead">
+    </a>
+    <nav class="nav" aria-label="Main" data-i-attr="aria-label:navLabel">
+      <a href="#visit" data-i="nVisit">Visit</a>
+      <a href="#birthdays" data-i="nBday">Birthdays</a>
+      <a href="#ranch" data-i="nRanch">The Ranch</a>
+      <a href="#groups" data-i="nGroups">Field Trips</a>
+      <a href="#market" data-i="nMarket">Farmers Market</a>
+      <a href="#about" data-i="nAbout">About</a>
+      <a href="#directions" data-i="nDir">Directions</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" data-lang="en" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true" aria-label="English">EN</button>
+        <button type="button" data-set-lang="es" aria-pressed="false" aria-label="Español">ES</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="https://cantonahomestead.com/ranch/birthdays" data-i="bookShort">Book a birthday</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+        <svg class="icon i-open"><use href="#i-menu"/></svg><svg class="icon i-close"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a class="m-link" href="#visit"><span data-i="nVisit">Visit</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="m-link" href="#birthdays"><span data-i="nBday">Birthdays</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="m-link" href="#ranch"><span data-i="nRanch">The Ranch</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="m-link" href="#groups"><span data-i="nGroupsLong">Field Trips &amp; Spirit Day</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="m-link" href="#market"><span data-i="nMarket">Farmers Market</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="m-link" href="#about"><span data-i="nAbout">About</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="m-link" href="#directions"><span data-i="nDir">Directions</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a class="btn btn-primary" href="https://cantonahomestead.com/ranch/birthdays"><svg class="icon"><use href="#i-cake"/></svg><span data-i="book">Book your birthday</span></a>
+  <a class="btn btn-ghost" href="https://cantonahomestead.com/activities/cantona-activities#payment"><svg class="icon"><use href="#i-ticket"/></svg><span data-i="buy">Buy weekend tickets</span></a>
+</div>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="hero-title" data-i="h1"><span class="ln"><span>Celebrate your</span></span><span class="ln"><span>kid's birthday</span></span><span class="ln"><span>on the farm</span></span></h1>
+      <p class="lede fade" style="--i:0" data-i="heroLede">A real 40-acre Texas farm with a petting zoo, room to run and air-conditioned party rooms. Minutes from The Woodlands, Spring and North Houston.</p>
+      <div class="cta-row fade" style="--i:1">
+        <a class="btn btn-primary" href="https://cantonahomestead.com/ranch/birthdays"><svg class="icon"><use href="#i-cake"/></svg><span data-i="book">Book your birthday</span></a>
+        <a class="btn btn-ghost" href="https://cantonahomestead.com/activities/cantona-activities#payment"><svg class="icon"><use href="#i-ticket"/></svg><span data-i="buy">Buy weekend tickets</span></a>
+      </div>
+      <ul class="hero-facts fade" style="--i:2">
+        <li><svg class="icon"><use href="#i-clock"/></svg><span class="num" data-i="factHours">Sat 10 AM–5 PM · Sun 10 AM–3 PM</span></li>
+        <li><svg class="icon"><use href="#i-ticket"/></svg><span class="num" data-i="factPrice">Adults $10 · Kids $18</span></li>
+        <li><svg class="icon"><use href="#i-pin"/></svg><span>Tomball, Texas</span></li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo">
+        <img src="assets/hero.webp" srcset="assets/hero-800.webp 800w, assets/hero.webp 1500w" sizes="(min-width: 900px) 48vw, 100vw" width="1500" height="1000" fetchpriority="high" alt="A child leans on the fence watching a cow and her calf in the pasture at Cantona Homestead" data-i-attr="alt:altHero">
+      </div>
+      <div class="hero-inset">
+        <img src="assets/goat-kid.webp" width="900" height="1350" alt="A black and white baby goat at the petting zoo" data-i-attr="alt:altGoat">
+      </div>
+      <svg class="hero-sprig sprig" viewBox="0 0 64 96" aria-hidden="true"><use href="#i-sprig"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="visit-head">
+      <h2 id="visit-h" data-r data-i="visitH">Open every weekend</h2>
+      <p class="lede" data-r style="--d:1" data-i="visitLede">One ticket covers the petting zoo, the outdoor play yards and the air-conditioned indoor rooms. Stay as long as you like.</p>
+    </div>
+    <div class="ticket" data-r>
+      <div class="ticket-main">
+        <dl class="hours num">
+          <div><dt data-i="sat">Saturday</dt><dd>10 AM – 5 PM</dd></div>
+          <div><dt data-i="sun">Sunday</dt><dd>10 AM – 3 PM</dd></div>
+        </dl>
+        <ul class="included">
+          <li><svg class="icon"><use href="#i-paw"/></svg><span data-i="inc1">Petting zoo</span></li>
+          <li><svg class="icon"><use href="#i-sun"/></svg><span data-i="inc2">Outdoor play</span></li>
+          <li><svg class="icon"><use href="#i-home"/></svg><span data-i="inc3">Air-conditioned indoor rooms</span></li>
+        </ul>
+      </div>
+      <div class="ticket-stub">
+        <dl class="prices num">
+          <div><dt data-i="pAdult">Adult (18+)</dt><dd>$10</dd></div>
+          <div><dt data-i="pKid">Children and youth (1–18)</dt><dd>$18</dd></div>
+          <div><dt data-i="pBaby">Babies</dt><dd data-i="free">Free</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="https://cantonahomestead.com/activities/cantona-activities#payment"><span data-i="buyShort">Buy tickets</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <p class="ticket-note" data-i="visitNote">The ranch is a natural outdoor setting, so expect animals, insects and a little dirt. Wear closed-toe shoes and comfortable clothes. We may close in hazardous weather: call <a href="tel:+18323033534">(832) 303-3534</a> for closure updates.</p>
+  </div>
+</section>
+
+<section id="birthdays" aria-labelledby="bday-h">
+  <div class="wrap">
+    <div class="split-head">
+      <h2 id="bday-h" data-r data-i="bdayH">Plan the perfect kids' birthday party</h2>
+      <p class="lede" data-r style="--d:1" data-i="bdayLede">Animals to meet, wide-open space to run and a party room that is yours for two hours. Pick a space, pick a date, and we take it from there.</p>
+    </div>
+
+    <div class="packages">
+      <article class="pkg" data-r>
+        <img src="assets/room-b.webp" width="480" height="640" loading="lazy" alt="Indoor party room with red gingham picnic tables" data-i-attr="alt:altRoomB">
+        <h3 data-i="pk1">Room B or Room C</h3>
+        <p class="pkg-meta" data-i="pk1m">Semi-private 12 × 24 indoor room with air conditioning. 15 children included, up to 20.</p>
+        <p class="pkg-price num"><b>$450</b><span class="muted" data-i="pk1p">for 15 children</span></p>
+        <a class="btn btn-ghost btn-sm" href="https://cantonahomestead.com/ranch/birthdays"><span data-i="dates">See dates</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="pkg" data-r>
+        <img src="assets/courtyard.webp" width="432" height="188" loading="lazy" alt="Covered outdoor courtyard decorated with bunting and balloons" data-i-attr="alt:altCourt">
+        <h3>Cantona Courtyard</h3>
+        <p class="pkg-meta" data-i="pk2m">Covered 12 × 30 outdoor structure, for your party only. 20 children included, up to 25.</p>
+        <p class="pkg-price num"><b>$600</b><span class="muted" data-i="pk2p">for 20 children</span></p>
+        <a class="btn btn-ghost btn-sm" href="https://cantonahomestead.com/en/ranch/birthdays/cantona-courtyard"><span data-i="dates">See dates</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="pkg" data-r>
+        <img src="assets/room-a.webp" width="480" height="640" loading="lazy" alt="Large indoor party room with picnic tables" data-i-attr="alt:altRoomA">
+        <h3 data-i="pk3">Room A</h3>
+        <p class="pkg-meta" data-i="pk3m">Our largest room: semi-private 12 × 36, air-conditioned. 25 children included, up to 30.</p>
+        <p class="pkg-price num"><b>$750</b><span class="muted" data-i="pk3p">for 25 children</span></p>
+        <a class="btn btn-ghost btn-sm" href="https://cantonahomestead.com/en/ranch/birthdays/room-a"><span data-i="dates">See dates</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+
+    <div class="bday-more">
+      <div data-r>
+        <h3 data-i="incH">Every party includes</h3>
+        <ul class="ticks">
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="in1">Two hours, plus 20 minutes beforehand to decorate</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="in2">Tables and benches in your space</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="in3">Petting zoo, outdoor play and indoor activities for every guest (shared with other visitors)</span></li>
+        </ul>
+      </div>
+      <div data-r style="--d:1">
+        <h3 data-i="addH">Add-ons</h3>
+        <ul class="ticks num">
+          <li><svg class="icon"><use href="#i-plus"/></svg><span data-i="ad1">Additional child: $30</span></li>
+          <li><svg class="icon"><use href="#i-plus"/></svg><span data-i="ad2">Bounce house with slide: $150 per hour</span></li>
+          <li><svg class="icon"><use href="#i-plus"/></svg><span data-i="ad3">Souvenirs: $5 per child</span></li>
+          <li><svg class="icon"><use href="#i-plus"/></svg><span data-i="ad4">Event host to help with setup and serving</span></li>
+        </ul>
+      </div>
+      <div class="bday-photo" data-r="img">
+        <img src="assets/party-table.webp" width="1000" height="667" loading="lazy" alt="Long tables set for an outdoor celebration under a tent" data-i-attr="alt:altParty">
+      </div>
+    </div>
+
+    <div class="bday-actions" data-r>
+      <a class="btn btn-primary" href="https://cantonahomestead.com/ranch/birthdays"><svg class="icon"><use href="#i-cake"/></svg><span data-i="avail">Check birthday availability</span></a>
+      <a class="textlink" href="https://cantonahomestead.com/assets/documents/flyer-paquetes-cumpleanos.pdf"><svg class="icon"><use href="#i-download"/></svg><span data-i="flyer">Download party packages (PDF)</span></a>
+      <span class="muted" data-i="fill">Dates fill quickly in peak season.</span>
+    </div>
+  </div>
+</section>
+
+<section class="ranch" id="ranch" aria-labelledby="ranch-h">
+  <div class="wrap">
+    <div class="split-head">
+      <h2 id="ranch-h" data-r data-i="ranchH">Where kids dig, build, splash and pretend</h2>
+      <p class="lede" data-r style="--d:1" data-i="ranchLede">Cantona Ranch is built around real, hands-on play: open-ended, a little messy and a long way from a screen. Take a look around.</p>
+    </div>
+    <div class="explorer" data-r>
+      <div class="spots" role="group" aria-label="Play areas" data-i-attr="aria-label:spotsLabel">
+        <button class="spot" type="button" aria-pressed="true" data-img="assets/sandbox.webp" data-t="s1" data-d="s1d" data-a="s1a"><span data-i="s1">Sandbox</span><small data-i="out">Outdoor</small></button>
+        <button class="spot" type="button" aria-pressed="false" data-img="assets/mud-kitchen.webp" data-t="s2" data-d="s2d" data-a="s2a"><span data-i="s2">Mud Kitchen</span><small data-i="out">Outdoor</small></button>
+        <button class="spot" type="button" aria-pressed="false" data-img="assets/water-play.webp" data-t="s3" data-d="s3d" data-a="s3a"><span data-i="s3">Water Tables</span><small data-i="out">Outdoor</small></button>
+        <button class="spot" type="button" aria-pressed="false" data-img="assets/goat-hay.webp" data-t="s4" data-d="s4d" data-a="s4a"><span data-i="s4">Petting Zoo</span><small data-i="out">Outdoor</small></button>
+        <button class="spot" type="button" aria-pressed="false" data-img="assets/mini-market.webp" data-t="s5" data-d="s5d" data-a="s5a"><span data-i="s5">Mini Market</span><small data-i="ind">Indoor</small></button>
+        <button class="spot" type="button" aria-pressed="false" data-img="assets/play-kitchen.webp" data-t="s6" data-d="s6d" data-a="s6a"><span data-i="s6">Play Kitchen</span><small data-i="ind">Indoor</small></button>
+        <button class="spot" type="button" aria-pressed="false" data-img="assets/building-zone.webp" data-t="s7" data-d="s7d" data-a="s7a"><span data-i="s7">Building Zone</span><small data-i="ind">Indoor</small></button>
+      </div>
+      <div>
+        <div class="stage" id="stage">
+          <img class="on" src="assets/sandbox.webp" width="1000" height="530" loading="lazy" alt="Sandbox with toys beside a wooden play structure">
+        </div>
+        <div class="stage-cap" aria-live="polite" style="margin-top:20px">
+          <h3 id="cap-t">Sandbox</h3>
+          <p class="muted" id="cap-d">Dig, scoop, pour and build. Roads, castles, construction sites: whatever they dream up.</p>
+        </div>
+      </div>
+    </div>
+    <div class="also">
+      <p data-i="also"><strong>Also inside:</strong> an Art Studio for painting and crafts, a Science &amp; Discovery area for "what happens if?" questions, and a quiet Story Time corner for a break between adventures.</p>
+      <a class="btn btn-primary" href="https://cantonahomestead.com/activities/cantona-activities#payment"><span data-i="buyShort">Buy tickets</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section id="groups" aria-labelledby="groups-h">
+  <div class="wrap">
+    <div class="split-head">
+      <h2 id="groups-h" data-r data-i="groupsH">Bring your class, your team or your whole community</h2>
+      <p class="lede" data-r style="--d:1" data-i="groupsLede">Weekdays are for field trips. Saturdays can raise money for your organization.</p>
+    </div>
+    <div class="groups-photo" data-r="img">
+      <img src="assets/goats-pasture.webp" width="1200" height="800" loading="lazy" alt="A child walks among young goats grazing in the pasture" data-i-attr="alt:altPasture">
+    </div>
+    <div class="groups-grid">
+      <article class="group" data-r>
+        <h3 data-i="ftH">Field trips</h3>
+        <p class="muted" data-i="ftP">An educational day for elementary schools, homeschool groups and student organizations: animals and farm life, nature and agriculture, hands-on learning, arts and play.</p>
+        <dl class="facts num">
+          <div><dt data-i="when">When</dt><dd data-i="ftWhen">Monday to Friday, 9 AM – 2 PM</dd></div>
+          <div><dt data-i="group">Group</dt><dd data-i="ftGroup">35 students minimum</dd></div>
+          <div><dt data-i="price">Price</dt><dd data-i="ftPrice">$25 per student · $10 adults and siblings</dd></div>
+        </dl>
+        <a class="btn btn-ghost" href="https://cantonahomestead.com/en/ranch/field-trips"><span data-i="ftCta">Request a field trip</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="group" data-r style="--d:1">
+        <h3 data-i="sdH">Spirit Day fundraisers</h3>
+        <p class="muted" data-i="sdP">Invite your school, church, company or nonprofit to the farm on a Saturday reserved for you. Part of every ticket sold through your referral goes back to your organization.</p>
+        <dl class="facts num">
+          <div><dt data-i="when">When</dt><dd data-i="sdWhen">Saturdays, during regular hours</dd></div>
+          <div><dt data-i="how">How</dt><dd data-i="sdHow">Guests name your organization at checkout</dd></div>
+          <div><dt data-i="after">After</dt><dd data-i="sdAfter">You get a sales report and your share by email</dd></div>
+        </dl>
+        <a class="btn btn-ghost" href="https://cantonahomestead.com/en/spirit-day"><span data-i="sdCta">Request a Spirit Day</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="market on-dark" id="market" aria-labelledby="market-h">
+  <div class="wrap market-grid">
+    <div class="market-photo" data-r="img">
+      <img src="assets/market-produce.webp" width="1000" height="709" loading="lazy" alt="Crates of squash, cucumbers and zucchini at the outdoor market" data-i-attr="alt:altMarket">
+    </div>
+    <div>
+      <h2 id="market-h" data-r data-i="marketH">A free farmers market on the grass</h2>
+      <p class="lede" data-r style="--d:1; margin-top:18px" data-i="marketLede">Local growers, makers and small businesses, with live music and food. Admission is free; kids' activities at Cantona Ranch are ticketed.</p>
+      <div class="market-date" data-r style="--d:2">
+        <div class="cal num" aria-hidden="true"><span data-i="dec">Dec</span><b>5</b></div>
+        <p><strong data-i="nextMkt">Next market: Saturday, December 5</strong><span class="num" data-i="mktTime">9:00 AM – 1:00 PM · rain or shine</span></p>
+      </div>
+      <div class="cta-row" data-r style="--d:3">
+        <a class="btn btn-gold" href="https://cantonahomestead.com/en/farmers-market/farmers-market-december-5-2026-12-05"><span data-i="mktCta">See market details</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="https://cantonahomestead.com/en/farmers-market/farmers-market-december-5-2026-12-05/apply" data-i="vendorCta">Apply as a vendor · $50 booth</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="museum" id="museum" aria-labelledby="museum-h">
+  <div class="wrap museum-grid">
+    <figure data-r>
+      <img src="assets/museum-concept.webp" width="1200" height="900" loading="lazy" alt="Conceptual rendering of the proposed Cantona Heritage Museum building" data-i-attr="alt:altMuseum">
+      <figcaption data-i="museumCap">Conceptual visualization. The building and any partnerships are not yet confirmed.</figcaption>
+    </figure>
+    <div>
+      <h2 id="museum-h" data-r data-i="museumH">Cantona Heritage Museum</h2>
+      <p class="lede" data-r style="--d:1; margin-top:18px" data-i="museumLede">A proposed place where Mesoamerican heritage, Texas communities and family stories meet: Cantona in Puebla, Citlaltépetl, Mitla, and a Day of the Dead altar tradition shared with respect.</p>
+      <p class="status" data-r style="--d:2"><i></i><span data-i="museumStatus">A cultural proposal in development</span></p>
+      <div class="cta-row" data-r style="--d:3">
+        <a class="btn btn-ghost" href="https://cantonahomestead.com/en/heritage-museum"><span data-i="museumCta">Explore the vision</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div>
+      <h2 id="about-h" data-r data-i="aboutH" style="margin-bottom:28px">Why we opened the gate</h2>
+      <blockquote data-r style="--d:1" data-i="quote">We invite families to step away from the fast pace of life and reconnect with one another, with nature, and with God.</blockquote>
+    </div>
+    <div>
+      <p class="lede" data-r data-i="aboutP" style="margin-bottom:28px">Forty acres, animals, open space and room to breathe. Children explore freely while the grown-ups finally get to slow down. These are the values behind every visit.</p>
+      <dl class="values" data-r>
+        <div><dt data-i="v1">Faith</dt><dd data-i="v1d">We believe in the beauty and purpose of God's creation and reflect it in every experience.</dd></div>
+        <div><dt data-i="v2">Family</dt><dd data-i="v2d">Time spent together, where young and old each find their place.</dd></div>
+        <div><dt data-i="v3">Simplicity</dt><dd data-i="v3d">We find the extraordinary in the simple, the real and the authentic.</dd></div>
+        <div><dt data-i="v4">Connection</dt><dd data-i="v4d">With nature, with one another, and with what truly matters.</dd></div>
+        <div><dt data-i="v5">Peace &amp; rest</dt><dd data-i="v5d">A space where adults can breathe and leave the busyness behind.</dd></div>
+        <div><dt data-i="v6">Joy</dt><dd data-i="v6d">The freedom of children to play, explore and be themselves.</dd></div>
+        <div><dt data-i="v7">Love &amp; care</dt><dd data-i="v7d">We serve every family with intention, warmth and respect.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery" aria-labelledby="gal-h">
+  <div class="wrap gallery-head">
+    <h2 id="gal-h" data-i="galH">A closer look</h2>
+    <div class="gal-nav">
+      <button type="button" id="gal-prev" aria-label="Previous photos" data-i-attr="aria-label:prev"><svg class="icon"><use href="#i-left"/></svg></button>
+      <button type="button" id="gal-next" aria-label="Next photos" data-i-attr="aria-label:next"><svg class="icon"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+  <div class="strip" id="strip" tabindex="0" role="region" aria-labelledby="gal-h">
+    <figure><img src="assets/rabbit.webp" width="800" height="1200" loading="lazy" alt="A child hugs a white rabbit" data-i-attr="alt:g1"></figure>
+    <figure><img src="assets/paddocks.webp" width="1000" height="753" loading="lazy" alt="Families along the paddock fence under a blue sky" data-i-attr="alt:g2"></figure>
+    <figure><img src="assets/pony.webp" width="800" height="1200" loading="lazy" alt="A supervised pony ride with a handler" data-i-attr="alt:g3"></figure>
+    <figure><img src="assets/trucks.webp" width="1000" height="667" loading="lazy" alt="A boy plays with toy trucks in the sand" data-i-attr="alt:g4"></figure>
+    <figure><img src="assets/sheep-goats.webp" width="800" height="1116" loading="lazy" alt="Children meet sheep and goats on the lawn" data-i-attr="alt:g5"></figure>
+    <figure><img src="assets/ranch-yard.webp" width="1000" height="667" loading="lazy" alt="The outdoor play yard with gazebos at Cantona Ranch" data-i-attr="alt:g6"></figure>
+    <figure><img src="assets/horse.webp" width="480" height="640" loading="lazy" alt="A hand gently pets a horse" data-i-attr="alt:g7"></figure>
+    <figure><img src="assets/market-play.webp" width="800" height="1067" loading="lazy" alt="Kids shop for pretend produce in the indoor market" data-i-attr="alt:g8"></figure>
+    <figure><img src="assets/fence-kids.webp" width="640" height="480" loading="lazy" alt="Two children look out over the open pasture" data-i-attr="alt:g9"></figure>
+    <figure><img src="assets/workbench.webp" width="800" height="1067" loading="lazy" alt="Construction toys and a workbench in the building zone" data-i-attr="alt:g10"></figure>
+  </div>
+</section>
+
+<section id="directions" aria-labelledby="dir-h">
+  <div class="wrap dir-grid">
+    <div>
+      <h2 id="dir-h" data-r data-i="dirH">Find us on FM 2978</h2>
+      <p class="lede" data-r style="--d:1; margin-top:18px" data-i="dirLede">24706 FM 2978, Tomball, Texas 77375. It is a rural property, so watch for our signs and drive slowly: children and animals may be nearby.</p>
+      <div class="cta-row" data-r style="--d:2">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=24706%20FM%202978%2C%20Tomball%2C%20Texas%2077375" target="_blank" rel="noopener"><svg class="icon"><use href="#i-nav"/></svg>Google Maps</a>
+        <a class="btn btn-ghost" href="https://waze.com/ul?q=24706%20FM%202978%2C%20Tomball%2C%20Texas%2077375&navigate=yes" target="_blank" rel="noopener"><svg class="icon"><use href="#i-nav"/></svg>Waze</a>
+      </div>
+      <div class="contact-list" data-r style="--d:3">
+        <a href="https://wa.me/18323033534?text=Hi%20Cantona%20Homestead!%20I%20have%20a%20question." target="_blank" rel="noopener" data-wa><svg class="icon solid"><use href="#i-wa"/></svg><span>WhatsApp<small data-i="waSmall">The fastest way to ask a question</small></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+        <a href="tel:+18323033534"><svg class="icon"><use href="#i-phone"/></svg><span class="num">(832) 303-3534<small data-i="telSmall">Call for bookings and weather closures</small></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+        <a href="mailto:hello@cantonahomestead.com"><svg class="icon"><use href="#i-mail"/></svg><span>hello@cantonahomestead.com<small data-i="mailSmall">Or send a message from our <u>contact page</u></small></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="dir-right" data-r>
+      <h3 data-i="routesH">Driving directions</h3>
+      <div class="routes">
+        <details open>
+          <summary><span data-i="r1">From The Woodlands</span><small>15–20 min</small><svg class="icon"><use href="#i-plus"/></svg></summary>
+          <ol data-i="r1o"><li>Take Woodlands Parkway west.</li><li>Turn left onto FM 2978 (Hufsmith–Kuykendahl Rd).</li><li>Continue south for about 6–8 miles.</li><li>Cantona Homestead is on your right.</li></ol>
+        </details>
+        <details>
+          <summary><span data-i="r2">From Downtown Tomball</span><small>10–15 min</small><svg class="icon"><use href="#i-plus"/></svg></summary>
+          <ol data-i="r2o"><li>Take Main Street / FM 2920 east.</li><li>Turn left onto FM 2978 north.</li><li>Continue about 3–5 miles.</li><li>Cantona Homestead is on your left.</li></ol>
+        </details>
+        <details>
+          <summary><span data-i="r3">From Spring</span><small>20–25 min</small><svg class="icon"><use href="#i-plus"/></svg></summary>
+          <ol data-i="r3o"><li>Take Grand Parkway (TX-99) west toward Tomball.</li><li>Exit at FM 2920 and turn right, heading west.</li><li>Turn right onto FM 2978 north.</li><li>Continue about 3–5 miles. We are on your left.</li></ol>
+        </details>
+        <details>
+          <summary><span data-i="r4">From Conroe</span><small>30–35 min</small><svg class="icon"><use href="#i-plus"/></svg></summary>
+          <ol data-i="r4o"><li>Take I-45 south toward The Woodlands.</li><li>Exit onto Woodlands Parkway west.</li><li>Turn left onto FM 2978 south.</li><li>Continue about 6–8 miles. We are on your right.</li></ol>
+        </details>
+        <details>
+          <summary><span data-i="r5">From Montgomery</span><small>35–45 min</small><svg class="icon"><use href="#i-plus"/></svg></summary>
+          <ol data-i="r5o"><li>Take TX-105 east toward Conroe.</li><li>Merge onto I-45 south.</li><li>Exit onto Woodlands Parkway west.</li><li>Turn left onto FM 2978 south and continue to 24706.</li></ol>
+        </details>
+      </div>
+      <p class="arrive" data-i="arrive">On event days, follow the posted signs and parking attendants.</p>
+    </div>
+  </div>
+</section>
+
+<section class="closing about" aria-labelledby="close-h">
+  <div class="wrap">
+    <svg class="closing-sprig sprig" viewBox="0 0 64 96" aria-hidden="true"><use href="#i-sprig"/></svg>
+    <h2 id="close-h" data-r data-i="closeH">Ready for a day at Cantona?</h2>
+    <div class="cta-row" data-r style="--d:1">
+      <a class="btn btn-primary" href="https://cantonahomestead.com/ranch/birthdays"><svg class="icon"><use href="#i-cake"/></svg><span data-i="book">Book your birthday</span></a>
+      <a class="btn btn-ghost" href="https://cantonahomestead.com/activities/cantona-activities#payment"><svg class="icon"><use href="#i-ticket"/></svg><span data-i="buy">Buy weekend tickets</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.webp" width="640" height="324" loading="lazy" alt="Cantona Homestead">
+        <p data-i="footTag">A farm, family and cultural experience in Tomball, Texas.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/cantonahomestead/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a>
+          <a href="https://www.facebook.com/Cantonahomestead" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+          <a href="https://wa.me/18323033534" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon solid"><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+      <nav aria-labelledby="f1">
+        <h2 id="f1" data-i="fExplore">Explore</h2>
+        <ul>
+          <li><a href="https://cantonahomestead.com/the-farm" data-i="fFarm">The Farm</a></li>
+          <li><a href="https://cantonahomestead.com/cantonaranch">Cantona Ranch</a></li>
+          <li><a href="https://cantonahomestead.com/birthdaysandcelebrations" data-i="fBday">Birthdays and Celebrations</a></li>
+          <li><a href="https://cantonahomestead.com/farmersmarket" data-i="nMarket">Farmers Market</a></li>
+          <li><a href="https://cantonahomestead.com/events" data-i="fEvents">Events</a></li>
+          <li><a href="https://cantonahomestead.com/en/blog">Blog</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f2">
+        <h2 id="f2" data-i="fDocs">Documents</h2>
+        <ul>
+          <li><a href="https://cantonahomestead.com/terms-of-sale" data-i="d1">Terms of Sale</a></li>
+          <li><a href="https://cantonahomestead.com/terms-of-use" data-i="d2">Terms of Use</a></li>
+          <li><a href="https://cantonahomestead.com/privacy-policy" data-i="d3">Privacy Policy</a></li>
+          <li><a href="https://cantonahomestead.com/liability-waiver" data-i="d4">Liability Waiver</a></li>
+          <li><a href="https://cantonahomestead.com/event-and-participation-policies" data-i="d5">Event Policies</a></li>
+          <li><a href="https://cantonahomestead.com/liability-waiver-2" data-i="d6">Vendor Liability Waiver</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 data-i="fVisit">Plan your visit</h2>
+        <ul class="num">
+          <li><a href="https://www.google.com/maps/search/?api=1&query=24706+FM+2978+Tomball+TX+77375" target="_blank" rel="noopener">24706 FM 2978<br>Tomball, Texas 77375</a></li>
+          <li><a href="tel:+18323033534">(832) 303-3534</a></li>
+          <li><a href="mailto:hello@cantonahomestead.com">hello@cantonahomestead.com</a></li>
+          <li><a href="https://cantonahomestead.com/contact" data-i="fContact">Contact form</a></li>
+          <li><a href="https://cantonahomestead.com/login" data-i="fLogin">Private access</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Cantona Homestead · Tomball, Texas</span>
+      <span><span data-i="credit">Diseñado por</span> <a href="https://dgpglobalgroup.com" target="_blank" rel="noopener">DGP Global Group</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/18323033534?text=Hi%20Cantona%20Homestead!%20I%20have%20a%20question." target="_blank" rel="noopener" data-wa aria-label="Chat on WhatsApp" data-i-attr="aria-label:waAria">
+  <svg class="icon solid"><use href="#i-wa"/></svg><span data-i="waBtn">Chat with us</span>
+</a>
+
+<script>
+(function () {
+  var ES = {
+    skip: "Saltar al contenido", navLabel: "Principal",
+    nVisit: "Visítanos", nBday: "Cumpleaños", nRanch: "El Rancho", nGroups: "Excursiones", nGroupsLong: "Excursiones y Spirit Day", nMarket: "Farmers Market", nAbout: "Nosotros", nDir: "Cómo llegar",
+    bookShort: "Reserva tu cumpleaños", book: "Reserva tu cumpleaños", buy: "Comprar boletos del fin de semana", buyShort: "Comprar boletos",
+    h1: '<span class="ln"><span>El cumpleaños</span></span><span class="ln"><span>de tu hijo,</span></span><span class="ln"><span>en la granja</span></span>',
+    heroLede: "Una granja texana de verdad, de 40 acres, con zoológico interactivo, espacio para correr y salones de fiesta con aire acondicionado. A minutos de The Woodlands, Spring y el norte de Houston.",
+    factHours: "Sáb 10 AM–5 PM · Dom 10 AM–3 PM", factPrice: "Adultos $10 · Niños $18",
+    altHero: "Un niño se apoya en la cerca mirando a una vaca y su becerro en el potrero de Cantona Homestead", altGoat: "Una cabrita blanca y negra en el zoológico interactivo",
+    visitH: "Abierto todos los fines de semana",
+    visitLede: "Un solo boleto incluye el zoológico interactivo, las áreas de juego al aire libre y los salones interiores con aire acondicionado. Quédate el tiempo que quieras.",
+    sat: "Sábado", sun: "Domingo", inc1: "Zoológico interactivo", inc2: "Juegos al aire libre", inc3: "Salones interiores con aire acondicionado",
+    pAdult: "Adulto (18+)", pKid: "Niños y jóvenes (1–18)", pBaby: "Bebés", free: "Gratis",
+    visitNote: 'El rancho es un entorno natural al aire libre: habrá animales, insectos y un poco de tierra. Usa zapatos cerrados y ropa cómoda. Podemos cerrar por mal clima: llama al <a href="tel:+18323033534">(832) 303-3534</a> para confirmar.',
+    bdayH: "Organiza la fiesta de cumpleaños perfecta",
+    bdayLede: "Animales para conocer, espacio abierto para correr y un salón de fiesta solo para ustedes durante dos horas. Elige el espacio, elige la fecha y nosotros nos encargamos del resto.",
+    altRoomB: "Salón de fiestas interior con mesas de picnic y manteles rojos de cuadros", altCourt: "Patio exterior techado decorado con banderines y globos", altRoomA: "Salón de fiestas interior amplio con mesas de picnic", altParty: "Mesas largas preparadas para una celebración al aire libre bajo una carpa",
+    pk1: "Salón B o Salón C", pk1m: "Salón interior semiprivado de 12 × 24 con aire acondicionado. 15 niños incluidos, hasta 20.", pk1p: "para 15 niños",
+    pk2m: "Estructura exterior techada de 12 × 30, exclusiva para tu fiesta. 20 niños incluidos, hasta 25.", pk2p: "para 20 niños",
+    pk3: "Salón A", pk3m: "Nuestro salón más grande: semiprivado de 12 × 36, con aire acondicionado. 25 niños incluidos, hasta 30.", pk3p: "para 25 niños",
+    dates: "Ver fechas",
+    incH: "Todas las fiestas incluyen", in1: "Dos horas, más 20 minutos antes para decorar", in2: "Mesas y bancas en tu espacio", in3: "Zoológico interactivo, juegos al aire libre y actividades interiores para todos los invitados (compartidos con otros visitantes)",
+    addH: "Extras", ad1: "Niño adicional: $30", ad2: "Brincolín con resbaladilla: $150 por hora", ad3: "Recuerdos: $5 por niño", ad4: "Anfitrión para ayudar con el montaje y el servicio",
+    avail: "Ver disponibilidad de cumpleaños", flyer: "Descargar paquetes de fiesta (PDF)", fill: "Las fechas se llenan rápido en temporada alta.",
+    ranchH: "Donde los niños excavan, construyen, chapotean e imaginan",
+    ranchLede: "Cantona Ranch está pensado para el juego de verdad, con las manos: libre, un poco sucio y muy lejos de una pantalla. Date una vuelta.",
+    spotsLabel: "Áreas de juego", out: "Exterior", ind: "Interior",
+    s1: "Arenero", s1d: "Excava, llena, vacía y construye. Caminos, castillos, obras en construcción: lo que se les ocurra.", s1a: "Arenero con juguetes junto a una estructura de juego de madera",
+    s2: "Cocina de lodo", s2d: "Mezclar, servir y revolver recetas imaginarias con materiales naturales. Vengan listos para ensuciarse.", s2a: "Cocina de lodo al aire libre con ollas y utensilios",
+    s3: "Mesas de agua", s3d: "Salpicar, bombear, llenar y vaciar. Los niños descubren cómo fluye el agua mientras juegan.", s3a: "Mesas de agua techadas con tinas azules",
+    s4: "Zoológico interactivo", s4d: "Conoce a nuestros animales y practica manos suaves, paciencia y cariño. Las experiencias varían según las necesidades de los animales.", s4a: "Una niña acaricia a una cabrita sobre el heno",
+    s5: "Mini mercado", s5d: "Tendero, cliente, granjero o vendedor: diversión de la granja al mercado en un mundo a su medida.", s5a: "Niños juegan en el mini mercado interior con frutas y verduras",
+    s6: "Cocinita", s6d: "Los pequeños chefs preparan comidas imaginarias, atienden su restaurante o inventan algo totalmente nuevo.", s6a: "Un niño juega en la cocinita interior",
+    s7: "Zona de construcción", s7d: "Bloques, herramientas y camiones. Diseñar, construir, tirar y volver a empezar: aquí no hay forma incorrecta de construir.", s7a: "Niños construyen en la zona de construcción interior",
+    also: '<strong>También adentro:</strong> un Estudio de Arte para pintar y hacer manualidades, un área de Ciencia y Descubrimiento para las preguntas de "¿qué pasa si…?" y un rincón tranquilo de Cuentos para descansar entre aventuras.',
+    groupsH: "Trae a tu clase, a tu equipo o a toda tu comunidad",
+    groupsLede: "Entre semana recibimos excursiones escolares. Los sábados pueden recaudar fondos para tu organización.",
+    altPasture: "Un niño camina entre cabritas que pastan en el potrero",
+    ftH: "Excursiones escolares", ftP: "Un día educativo para primarias, grupos de homeschool y organizaciones estudiantiles: animales y vida de granja, naturaleza y agricultura, aprendizaje práctico, arte y juego.",
+    when: "Cuándo", group: "Grupo", price: "Precio", how: "Cómo", after: "Después",
+    ftWhen: "Lunes a viernes, 9 AM – 2 PM", ftGroup: "Mínimo 35 estudiantes", ftPrice: "$25 por estudiante · $10 adultos y hermanos", ftCta: "Solicitar una excursión",
+    sdH: "Spirit Day para recaudar fondos", sdP: "Invita a tu escuela, iglesia, empresa u organización sin fines de lucro a la granja en un sábado reservado para ustedes. Una parte de cada boleto vendido por tu referencia regresa a tu organización.",
+    sdWhen: "Sábados, en horario regular", sdHow: "Los invitados indican tu organización al pagar", sdAfter: "Recibes por correo el reporte de ventas y tu parte", sdCta: "Solicitar un Spirit Day",
+    altMarket: "Cajas de calabazas, pepinos y calabacitas en el mercado al aire libre",
+    marketH: "Un farmers market gratuito sobre el pasto",
+    marketLede: "Productores, artesanos y pequeños negocios locales, con música en vivo y comida. La entrada es gratis; las actividades infantiles de Cantona Ranch requieren boleto.",
+    dec: "Dic", nextMkt: "Próximo mercado: sábado 5 de diciembre", mktTime: "9:00 AM – 1:00 PM · con lluvia o sol", mktCta: "Ver detalles del mercado", vendorCta: "Participa como vendedor · puesto $50",
+    altMuseum: "Representación conceptual del edificio propuesto para el Museo Cantona Heritage", museumCap: "Visualización conceptual. El edificio y las alianzas aún no están confirmados.",
+    museumH: "Museo Cantona Heritage",
+    museumLede: "Un lugar propuesto donde se encuentran la herencia mesoamericana, las comunidades de Texas y las historias de familia: Cantona en Puebla, el Citlaltépetl, Mitla y la tradición del altar de Día de Muertos, compartida con respeto.",
+    museumStatus: "Propuesta cultural en desarrollo", museumCta: "Conoce la visión",
+    aboutH: "Por qué abrimos la puerta",
+    quote: "Invitamos a las familias a alejarse del ritmo acelerado de la vida y reconectar entre sí, con la naturaleza y con Dios.",
+    aboutP: "Cuarenta acres, animales, espacios abiertos y lugar para respirar. Los niños exploran con libertad mientras los adultos por fin bajan el ritmo. Estos son los valores detrás de cada visita.",
+    v1: "Fe", v1d: "Creemos en la belleza y el propósito de la creación de Dios y lo reflejamos en cada experiencia.",
+    v2: "Familia", v2d: "Tiempo juntos, donde grandes y chicos encuentran su lugar.",
+    v3: "Sencillez", v3d: "Encontramos lo extraordinario en lo simple, lo real y lo auténtico.",
+    v4: "Conexión", v4d: "Con la naturaleza, con los demás y con lo que de verdad importa.",
+    v5: "Paz y descanso", v5d: "Un espacio donde los adultos pueden respirar y dejar atrás las prisas.",
+    v6: "Alegría", v6d: "La libertad de los niños para jugar, explorar y ser ellos mismos.",
+    v7: "Amor y cuidado", v7d: "Atendemos a cada familia con intención, calidez y respeto.",
+    galH: "Míralo de cerca", prev: "Fotos anteriores", next: "Fotos siguientes",
+    g1: "Una niña abraza a un conejo blanco", g2: "Familias junto a la cerca del corral bajo un cielo azul", g3: "Un paseo en poni supervisado por un cuidador", g4: "Un niño juega con camiones de juguete en la arena", g5: "Niños conocen ovejas y cabras en el pasto", g6: "El patio de juegos exterior con pérgolas en Cantona Ranch", g7: "Una mano acaricia suavemente a un caballo", g8: "Niños compran verduras de juguete en el mercado interior", g9: "Dos niños miran el potrero abierto", g10: "Juguetes de construcción y banco de trabajo en la zona de construcción",
+    dirH: "Encuéntranos sobre la FM 2978",
+    dirLede: "24706 FM 2978, Tomball, Texas 77375. Es una propiedad rural: busca nuestros letreros y maneja despacio, puede haber niños y animales cerca.",
+    waSmall: "La forma más rápida de resolver una duda", telSmall: "Llama para reservas y cierres por clima", mailSmall: "O escríbenos desde nuestra <u>página de contacto</u>",
+    routesH: "Cómo llegar en auto",
+    r1: "Desde The Woodlands", r1o: "<li>Toma Woodlands Parkway hacia el oeste.</li><li>Gira a la izquierda en FM 2978 (Hufsmith–Kuykendahl Rd).</li><li>Sigue hacia el sur unas 6–8 millas.</li><li>Cantona Homestead queda a tu derecha.</li>",
+    r2: "Desde el centro de Tomball", r2o: "<li>Toma Main Street / FM 2920 hacia el este.</li><li>Gira a la izquierda en FM 2978 norte.</li><li>Sigue unas 3–5 millas.</li><li>Cantona Homestead queda a tu izquierda.</li>",
+    r3: "Desde Spring", r3o: "<li>Toma Grand Parkway (TX-99) al oeste, hacia Tomball.</li><li>Sal en FM 2920 y gira a la derecha, hacia el oeste.</li><li>Gira a la derecha en FM 2978 norte.</li><li>Sigue unas 3–5 millas. Estamos a tu izquierda.</li>",
+    r4: "Desde Conroe", r4o: "<li>Toma la I-45 sur hacia The Woodlands.</li><li>Sal en Woodlands Parkway oeste.</li><li>Gira a la izquierda en FM 2978 sur.</li><li>Sigue unas 6–8 millas. Estamos a tu derecha.</li>",
+    r5: "Desde Montgomery", r5o: "<li>Toma la TX-105 este hacia Conroe.</li><li>Incorpórate a la I-45 sur.</li><li>Sal en Woodlands Parkway oeste.</li><li>Gira a la izquierda en FM 2978 sur y sigue hasta el 24706.</li>",
+    arrive: "Los días de evento, sigue los letreros y a los encargados del estacionamiento.",
+    closeH: "¿Listos para un día en Cantona?",
+    footTag: "Una experiencia de granja, familia y cultura en Tomball, Texas.",
+    fExplore: "Explora", fFarm: "La Granja", fBday: "Cumpleaños y celebraciones", fEvents: "Eventos", fDocs: "Documentos",
+    d1: "Términos de venta", d2: "Términos de uso", d3: "Política de privacidad", d4: "Exención de responsabilidad", d5: "Políticas de eventos", d6: "Exención para vendedores",
+    fVisit: "Planea tu visita", fContact: "Formulario de contacto", fLogin: "Acceso privado", credit: "Diseñado por",
+    waBtn: "Escríbenos", waAria: "Escríbenos por WhatsApp"
+  };
+  var EN_EXTRA = {
+    s1d: "Dig, scoop, pour and build. Roads, castles, construction sites: whatever they dream up.", s1a: "Sandbox with toys beside a wooden play structure",
+    s2d: "Mix, pour and stir imaginary recipes with natural materials. Come prepared to get dirty.", s2a: "Outdoor mud kitchen with pots and utensils",
+    s3d: "Splash, pump, fill and dump. Kids find out how water flows while they play.", s3a: "Covered water tables with blue basins",
+    s4d: "Meet our animal friends and practice gentle hands, patience and kindness. Encounters vary with the animals' needs.", s4a: "A child pets a young goat on the hay",
+    s5d: "Shopkeeper, shopper, farmer or vendor: farm-to-market fun in a kid-sized world.", s5a: "Kids play in the indoor mini market with fruit and vegetables",
+    s6d: "Little chefs cook imaginary meals, run their own restaurant or invent something completely new.", s6a: "A child plays at the indoor pretend kitchen",
+    s7d: "Blocks, tools and trucks. Design, build, knock down and rebuild: there is no wrong way to build here.", s7a: "Children build at the indoor construction zone"
+  };
+  var META = {
+    en: { title: "Petting Zoo & Birthday Parties in Tomball, TX | Cantona Homestead", desc: "Cantona Homestead is a 40-acre family farm in Tomball, Texas with a petting zoo, indoor and outdoor play, kids' birthday parties, field trips and a free farmers market. Minutes from The Woodlands and Spring.", wa: "Hi Cantona Homestead! I have a question." },
+    es: { title: "Zoológico interactivo y fiestas de cumpleaños en Tomball, TX | Cantona Homestead", desc: "Cantona Homestead es una granja familiar de 40 acres en Tomball, Texas, con zoológico interactivo, juegos interiores y al aire libre, fiestas de cumpleaños, excursiones escolares y un farmers market gratuito.", wa: "¡Hola Cantona Homestead! Tengo una pregunta." }
+  };
+
+  var doc = document, root = doc.documentElement;
+  var $ = function (s, c) { return (c || doc).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+  var lang = 'en';
+  var EN = {};
+
+  function t(key) { return lang === 'es' ? (ES[key] != null ? ES[key] : EN[key]) : (EN[key] != null ? EN[key] : EN_EXTRA[key]); }
+
+  $$('[data-i]').forEach(function (el) { var k = el.getAttribute('data-i'); if (!(k in EN)) EN[k] = el.innerHTML; });
+  $$('[data-i-attr]').forEach(function (el) {
+    var p = el.getAttribute('data-i-attr').split(':'); if (!(p[1] in EN)) EN[p[1]] = el.getAttribute(p[0]);
+  });
+  Object.keys(EN_EXTRA).forEach(function (k) { EN[k] = EN_EXTRA[k]; });
+
+  function setLang(next, user) {
+    lang = next === 'es' ? 'es' : 'en';
+    root.lang = lang;
+    $$('[data-i]').forEach(function (el) { var v = t(el.getAttribute('data-i')); if (v != null) el.innerHTML = v; });
+    $$('[data-i-attr]').forEach(function (el) { var p = el.getAttribute('data-i-attr').split(':'); var v = t(p[1]); if (v != null) el.setAttribute(p[0], v); });
+    doc.title = META[lang].title;
+    $('meta[name="description"]').setAttribute('content', META[lang].desc);
+    $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/18323033534?text=' + encodeURIComponent(META[lang].wa); });
+    $('.lang').setAttribute('data-lang', lang);
+    $$('[data-set-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang)); });
+    paintSpot(current, true);
+    if (user) { try { localStorage.setItem('ch-lang', lang); } catch (e) {} }
+  }
+  $$('[data-set-lang]').forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang'), true); }); });
+
+  /* Play-area explorer */
+  var spots = $$('.spot'), stage = $('#stage'), capT = $('#cap-t'), capD = $('#cap-d');
+  var current = spots[0], imgs = {};
+  imgs[current.getAttribute('data-img')] = $('img', stage);
+  function paintSpot(btn, textOnly) {
+    capT.textContent = t(btn.getAttribute('data-t')).replace(/&amp;/g, '&');
+    capD.textContent = t(btn.getAttribute('data-d'));
+    var src = btn.getAttribute('data-img'), img = imgs[src];
+    if (img) img.alt = t(btn.getAttribute('data-a'));
+    if (textOnly) return;
+    spots.forEach(function (s) { s.setAttribute('aria-pressed', String(s === btn)); });
+    if (!img) {
+      img = new Image(); img.decoding = 'async'; img.alt = t(btn.getAttribute('data-a')); img.src = src;
+      imgs[src] = img; stage.appendChild(img);
+    }
+    var show = function () {
+      if (current !== btn) return;
+      Object.keys(imgs).forEach(function (k) { imgs[k].classList.toggle('on', k === src); });
+    };
+    if (img.complete && img.naturalWidth) requestAnimationFrame(show);
+    else { img.addEventListener('load', function () { requestAnimationFrame(show); }, { once: true }); }
+  }
+  function pick(btn) { if (btn === current) return; current = btn; paintSpot(btn); }
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  spots.forEach(function (btn) {
+    btn.addEventListener('click', function () { pick(btn); });
+    btn.addEventListener('focus', function () { pick(btn); });
+    if (fine) btn.addEventListener('pointerenter', function () { pick(btn); });
+  });
+
+  /* Header + mobile menu */
+  var header = $('#header'), menuBtn = $('.menu-btn'), panel = $('#mobile-nav');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 12); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  function menu(open) {
+    panel.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    doc.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuBtn.addEventListener('click', function () { menu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+  $$('a', panel).forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { menu(false); menuBtn.focus(); } });
+  window.matchMedia('(min-width: 1080px)').addEventListener('change', function (e) { if (e.matches) menu(false); });
+
+  /* Scroll reveals */
+  var targets = $$('[data-r]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(function (el) { io.observe(el); });
+  } else { targets.forEach(function (el) { el.classList.add('in'); }); }
+
+  /* Gallery */
+  var strip = $('#strip'), prev = $('#gal-prev'), next = $('#gal-next');
+  function galState() {
+    prev.disabled = strip.scrollLeft < 8;
+    next.disabled = strip.scrollLeft + strip.clientWidth > strip.scrollWidth - 8;
+  }
+  function galMove(dir) { strip.scrollBy({ left: dir * Math.max(280, strip.clientWidth * 0.7), behavior: 'smooth' }); }
+  prev.addEventListener('click', function () { galMove(-1); });
+  next.addEventListener('click', function () { galMove(1); });
+  strip.addEventListener('scroll', galState, { passive: true });
+  window.addEventListener('resize', galState); galState();
+
+  /* Initial language */
+  var saved = null; try { saved = localStorage.getItem('ch-lang'); } catch (e) {}
+  var q = new URLSearchParams(location.search).get('lang');
+  var initial = q || saved || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+  if (initial === 'es') setLang('es');
+})();
+</script>
 </body>
 </html>
