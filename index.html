@@ -16,7 +16,7 @@
 <meta property="og:title" content="Petting Zoo &amp; Birthday Parties in Tomball, TX | Cantona Homestead">
 <meta property="og:description" content="A real 40-acre Texas farm with a petting zoo, indoor and outdoor play, birthday parties, field trips and a free farmers market. Minutes from The Woodlands.">
 <meta property="og:url" content="https://cantonahomestead.com/">
-<meta property="og:image" content="https://quasarworksco.github.io/cantona-homestead/assets/og.jpg">
+<meta property="og:image" content="https://cantonahomestead.dgp-link.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="A child watches the cows over the fence at Cantona Homestead">
@@ -38,8 +38,8 @@
   "@id": "https://cantonahomestead.com#business",
   "name": "Cantona Homestead",
   "url": "https://cantonahomestead.com",
-  "logo": "https://quasarworksco.github.io/cantona-homestead/assets/icon-512.png",
-  "image": "https://quasarworksco.github.io/cantona-homestead/assets/og.jpg",
+  "logo": "https://cantonahomestead.dgp-link.com/assets/icon-512.png",
+  "image": "https://cantonahomestead.dgp-link.com/assets/og.jpg",
   "description": "A 40-acre family farm in Tomball, Texas with a petting zoo, indoor and outdoor play, kids' birthday parties, field trips and a free farmers market.",
   "telephone": "+18323033534",
   "email": "hello@cantonahomestead.com",
@@ -86,10 +86,12 @@
   --gutter: clamp(20px, 5vw, 56px);
   --section: clamp(72px, 11vw, 148px);
   --radius: 18px;
+  --intro: 1.45s;
 }
+html.no-splash { --intro: 0s; }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--paper);
@@ -203,7 +205,7 @@ section { padding-block: var(--section); }
 /* Hero */
 .hero { padding-block: clamp(28px, 5vw, 64px) clamp(56px, 8vw, 104px); }
 .hero-grid { display: grid; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.hero h1 .ln { display: block; white-space: nowrap; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.hero h1 .ln { display: block; white-space: nowrap; overflow: hidden; padding: .12em .06em .26em 0; margin: -.12em 0 -.26em; }
 .hero h1 .ln > span { display: block; }
 .hero .lede { margin-top: clamp(18px, 2.4vw, 28px); }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(24px, 3vw, 36px); }
@@ -423,20 +425,102 @@ section { padding-block: var(--section); }
 @media (max-width: 560px) { .wa { padding: 0; width: 58px; justify-content: center; } .wa span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } }
 
 /* Motion: content is visible by default; .js enables entrances */
-.js .hero h1 .ln > span { transform: translateY(105%); animation: rise 900ms var(--ease-out) forwards; }
-.js .hero h1 .ln:nth-child(2) > span { animation-delay: 70ms; }
-.js .hero h1 .ln:nth-child(3) > span { animation-delay: 140ms; }
-.js .hero .fade { opacity: 0; transform: translateY(10px); animation: fadeup 700ms var(--ease-out) forwards; animation-delay: calc(260ms + var(--i, 0) * 70ms); }
-.js .hero-photo { clip-path: inset(100% 0 0 0); animation: unveil 1200ms var(--ease-out) 120ms forwards; }
-.js .hero-photo img { transform: scale(1.12); animation: settle 1600ms var(--ease-out) 120ms forwards; }
-.js .hero-inset { opacity: 0; transform: translateY(18px) rotate(-3deg); animation: inset 800ms var(--ease-out) 760ms forwards; }
-.js .hero-sprig path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1400ms var(--ease-out) 700ms forwards; }
+.js .hero h1 .ln > span { transform: translateY(115%); animation: rise 1000ms var(--ease-out) var(--intro) forwards; }
+.js .hero h1 .ln:nth-child(2) > span { animation-delay: calc(var(--intro) + 90ms); }
+.js .hero h1 .ln:nth-child(3) > span { animation-delay: calc(var(--intro) + 180ms); }
+.js .hero .fade { opacity: 0; transform: translateY(10px); animation: fadeup 700ms var(--ease-out) forwards; animation-delay: calc(var(--intro) + 320ms + var(--i, 0) * 80ms); }
+.js .hero-photo { clip-path: inset(100% 0 0 0); animation: unveil 1300ms var(--ease-out) calc(var(--intro) + 100ms) forwards; }
+.js .hero-photo img { transform: scale(1.12); animation: settle 1800ms var(--ease-out) calc(var(--intro) + 100ms) forwards; }
+.js .hero-inset { opacity: 0; transform: translateY(18px) rotate(-3deg); animation: inset 800ms var(--ease-out) calc(var(--intro) + 800ms) forwards, float 7s ease-in-out calc(var(--intro) + 1.6s) infinite; }
+.js .hero-sprig path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1400ms var(--ease-out) calc(var(--intro) + 700ms) forwards; }
 @keyframes rise { to { transform: none; } }
-@keyframes fadeup { to { opacity: 1; transform: none; } }
+@keyframes fadeup { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes unveil { to { clip-path: inset(0 0 0 0); } }
 @keyframes settle { to { transform: none; } }
 @keyframes inset { to { opacity: 1; transform: rotate(-3deg); } }
 @keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@keyframes spin { to { rotate: 360deg; } }
+@keyframes pop { from { opacity: 0; scale: .7; } to { opacity: 1; scale: 1; } }
+@keyframes slide { to { transform: translateX(-50%); } }
+@keyframes lift { to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
+@keyframes logoin { from { opacity: 0; transform: scale(.9); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes fill { to { transform: scaleX(1); } }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes par { from { transform: translateY(-9%) scale(1.2); } to { transform: translateY(9%) scale(1.2); } }
+
+/* Splash */
+.splash, .splash-back { display: none; }
+.js .splash, .js .splash-back { display: grid; position: fixed; inset: 0; pointer-events: none; }
+.js .splash { z-index: 201; place-items: center; background: var(--ribbon); animation: lift 850ms var(--ease-in-out) 1250ms forwards; }
+.js .splash-back { z-index: 200; background: var(--olive-deep); animation: lift 850ms var(--ease-in-out) 1400ms forwards; }
+.splash-in { display: grid; justify-items: center; gap: 26px; }
+.splash img { width: min(62vw, 300px); height: auto; animation: logoin 800ms var(--ease-out) both; }
+.splash-bar { width: 132px; height: 2px; background: rgba(43,26,8,.16); border-radius: 2px; overflow: hidden; }
+.splash-bar i { display: block; height: 100%; background: var(--ink); transform: scaleX(0); transform-origin: left; animation: fill 950ms var(--ease-in-out) 200ms forwards; }
+html.no-splash .splash, html.no-splash .splash-back { display: none; }
+
+/* Scroll progress */
+.progress { position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; }
+@supports (animation-timeline: scroll()) { .progress { animation: grow linear both; animation-timeline: scroll(root); } }
+
+/* Seal */
+.seal { position: absolute; left: -8%; top: 7%; width: clamp(88px, 9.5vw, 128px); aspect-ratio: 1; display: grid; place-items: center; z-index: 2; filter: drop-shadow(0 14px 18px rgba(43,26,8,.3)); }
+.seal > svg:first-child { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 26s linear infinite; }
+.seal circle { fill: var(--ink); }
+.seal text { fill: var(--ribbon); font: 700 10.6px var(--body); letter-spacing: .14em; }
+.seal .icon { width: 34%; height: 34%; color: var(--gold-soft); position: relative; }
+.js .seal { animation: pop 700ms var(--ease-out) calc(var(--intro) + 1000ms) both; }
+.hero-art::before { content: ""; position: absolute; z-index: -1; right: -9%; top: 7%; width: 78%; aspect-ratio: 1; border-radius: 50%; background: var(--ribbon); }
+.js .hero-art::before { animation: pop 1200ms var(--ease-out) var(--intro) both; }
+.hero-art { isolation: isolate; }
+@media (max-width: 899px) { .seal { left: -3%; top: 3%; } }
+
+/* Marquee */
+.marquee { position: relative; z-index: 2; background: var(--ink); color: var(--ribbon); overflow: hidden; padding: 16px 0; margin: -6px -3vw -30px; transform: rotate(-1.4deg); box-shadow: 0 18px 30px -22px rgba(43,26,8,.7); }
+.marquee-track { display: flex; width: max-content; animation: slide 46s linear infinite; }
+.marquee-set { display: flex; align-items: center; flex: none; }
+.marquee span { font: italic 500 clamp(1.25rem, 2.6vw, 2rem)/1.2 var(--display); white-space: nowrap; padding-inline: clamp(18px, 2.4vw, 34px); }
+.marquee .sprig { width: 15px; height: auto; color: var(--gold-soft); flex: none; transform: rotate(18deg); }
+.visit { padding-top: calc(var(--section) + 30px); }
+
+/* Arched section tops, after the hill in the logo */
+.ranch, .market, .about { border-radius: 50% 50% 0 0 / clamp(26px, 5vw, 76px) clamp(26px, 5vw, 76px) 0 0; }
+
+/* Word-by-word headings */
+.js h2[data-r] { opacity: 1; transform: none; }
+h2 .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .1em .04em .24em 0; margin: -.1em 0 -.24em; }
+h2 .w > span { display: inline-block; }
+.js h2[data-r] .w > span { transform: translateY(118%); transition: transform 950ms var(--ease-out); transition-delay: calc(var(--wi) * 55ms); }
+.js h2[data-r].in .w > span { transform: none; }
+.js h2[data-r].swap .w > span { transition: none; }
+
+/* Package rows */
+.pkg { position: relative; }
+.pkg img { transition: transform 500ms var(--ease-out); }
+.pkg::before { content: ""; position: absolute; inset: 0 calc(var(--gutter) * -.35); background: var(--paper-deep); border-radius: 14px; z-index: -1; opacity: 0; transform: scaleY(.86); transition: opacity 220ms ease, transform 320ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .pkg:hover::before { opacity: 1; transform: none; } .pkg:hover img { transform: scale(1.06) rotate(-1.5deg); } }
+#birthdays { isolation: isolate; }
+
+/* Parallax photo */
+@supports (animation-timeline: view()) { .js .groups-photo img { animation: par linear both; animation-timeline: view(); transform: none; transition: clip-path 1000ms var(--ease-out); } }
+
+/* Mobile action dock */
+.dock { position: fixed; left: 10px; right: 10px; bottom: max(10px, env(safe-area-inset-bottom)); z-index: 41; display: none; gap: 8px; padding: 7px; border-radius: 999px; background: color-mix(in srgb, var(--paper) 90%, transparent); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid var(--line); box-shadow: 0 18px 34px -16px rgba(43,26,8,.55); transform: translateY(150%); transition: transform 420ms var(--ease-out); }
+.dock .btn { flex: 1; min-height: 48px; padding: 0 12px; font-size: .95rem; }
+.dock.show { transform: none; }
+@media (max-width: 899px) {
+  .dock { display: flex; }
+  .wa { transition: transform 420ms var(--ease-out), box-shadow 200ms ease; }
+  .docked .wa { transform: translateY(-72px); }
+  .footer { padding-bottom: 96px; }
+}
+
+/* Mobile menu stagger */
+.mobile-nav.open .m-link, .mobile-nav.open .btn { animation: fadeup 520ms var(--ease-out) both; animation-delay: calc(var(--n, 0) * 40ms + 60ms); }
+.mobile-nav .m-link, .mobile-nav .btn { opacity: 1; }
+.strip.drag { scroll-snap-type: none; cursor: grabbing; scroll-behavior: auto; }
+@media (hover: hover) and (pointer: fine) { .strip { cursor: grab; } }
 .hero-inset { transform: rotate(-3deg); }
 
 .js [data-r] { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 800ms var(--ease-out); transition-delay: calc(var(--d, 0) * 70ms); }
@@ -452,11 +536,16 @@ section { padding-block: var(--section); }
   .js [data-r], .js [data-r="img"], .js [data-r="img"] img { transform: none; clip-path: none; transition: opacity 300ms ease; }
   .stage img { transform: none; filter: none; transition: opacity 200ms ease; }
   .mobile-nav { transform: none; }
+  .seal > svg:first-child, .marquee-track, .js .seal, .js .hero-art::before, .mobile-nav.open .m-link, .mobile-nav.open .btn, .js .groups-photo img { animation: none; }
+  .js h2[data-r] .w > span { transform: none; transition: none; }
+  .dock, .wa { transition: none; }
 }
 </style>
 </head>
 <body>
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{if(sessionStorage.getItem('ch-seen')||matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('no-splash')}sessionStorage.setItem('ch-seen','1')}catch(e){}})()</script>
+<div class="splash" aria-hidden="true"><div class="splash-in"><img src="assets/logo-320.webp" width="320" height="162" alt=""><span class="splash-bar"><i></i></span></div></div>
+<div class="splash-back" aria-hidden="true"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -509,6 +598,7 @@ section { padding-block: var(--section); }
       </button>
     </div>
   </div>
+  <div class="progress" aria-hidden="true"></div>
 </header>
 
 <div class="mobile-nav" id="mobile-nav">
@@ -548,9 +638,15 @@ section { padding-block: var(--section); }
         <img src="assets/goat-kid.webp" width="900" height="1350" alt="A black and white baby goat at the petting zoo" data-i-attr="alt:altGoat">
       </div>
       <svg class="hero-sprig sprig" viewBox="0 0 64 96" aria-hidden="true"><use href="#i-sprig"/></svg>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="seal-c" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><circle cx="60" cy="60" r="60"/><text><textPath href="#seal-c" textLength="276" data-i="seal">PETTING ZOO · BIRTHDAYS · FARM PLAY ·</textPath></text></svg>
+        <svg class="icon"><use href="#i-paw"/></svg>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-set"><span data-i="mq1">Petting zoo</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq2">Birthday parties</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq3">Sandbox & mud kitchen</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq4">Field trips</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq5">Spirit Days</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq6">Farmers market</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg></div><div class="marquee-set"><span data-i="mq1">Petting zoo</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq2">Birthday parties</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq3">Sandbox & mud kitchen</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq4">Field trips</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq5">Spirit Days</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg><span data-i="mq6">Farmers market</span><svg class="sprig" viewBox="0 0 64 96"><use href="#i-sprig"/></svg></div></div></div>
 
 <section class="visit" id="visit" aria-labelledby="visit-h">
   <div class="wrap">
@@ -901,6 +997,11 @@ section { padding-block: var(--section); }
   </div>
 </footer>
 
+<div class="dock" id="dock">
+  <a class="btn btn-ghost" href="https://cantonahomestead.com/activities/cantona-activities#payment"><svg class="icon"><use href="#i-ticket"/></svg><span data-i="dockT">Tickets</span></a>
+  <a class="btn btn-primary" href="https://cantonahomestead.com/ranch/birthdays"><svg class="icon"><use href="#i-cake"/></svg><span data-i="dockB">Book birthday</span></a>
+</div>
+
 <a class="wa" href="https://wa.me/18323033534?text=Hi%20Cantona%20Homestead!%20I%20have%20a%20question." target="_blank" rel="noopener" data-wa aria-label="Chat on WhatsApp" data-i-attr="aria-label:waAria">
   <svg class="icon solid"><use href="#i-wa"/></svg><span data-i="waBtn">Chat with us</span>
 </a>
@@ -984,6 +1085,7 @@ section { padding-block: var(--section); }
     fExplore: "Explora", fFarm: "La Granja", fBday: "Cumpleaños y celebraciones", fEvents: "Eventos", fDocs: "Documentos",
     d1: "Términos de venta", d2: "Términos de uso", d3: "Política de privacidad", d4: "Exención de responsabilidad", d5: "Políticas de eventos", d6: "Exención para vendedores",
     fVisit: "Planea tu visita", fContact: "Formulario de contacto", fLogin: "Acceso privado", credit: "Diseñado por",
+    seal: "GRANJA · CUMPLEAÑOS · ANIMALES ·", mq1: "Zoológico interactivo", mq2: "Fiestas de cumpleaños", mq3: "Arenero y cocina de lodo", mq4: "Excursiones escolares", mq5: "Spirit Days", mq6: "Farmers market", dockT: "Boletos", dockB: "Reservar fiesta",
     waBtn: "Escríbenos", waAria: "Escríbenos por WhatsApp"
   };
   var EN_EXTRA = {
@@ -1014,6 +1116,18 @@ section { padding-block: var(--section); }
   });
   Object.keys(EN_EXTRA).forEach(function (k) { EN[k] = EN_EXTRA[k]; });
 
+  var heads = $$('h2[data-r]');
+  function splitHeads(swap) {
+    heads.forEach(function (h) {
+      var words = h.textContent.trim().split(/\s+/);
+      h.setAttribute('aria-label', words.join(' '));
+      if (swap) h.classList.add('swap');
+      h.innerHTML = words.map(function (w, i) { return '<span class="w" aria-hidden="true"><span style="--wi:' + i + '">' + w.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span></span>'; }).join(' ');
+      if (swap) requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.remove('swap'); }); });
+    });
+  }
+  splitHeads(false);
+
   function setLang(next, user) {
     lang = next === 'es' ? 'es' : 'en';
     root.lang = lang;
@@ -1024,6 +1138,7 @@ section { padding-block: var(--section); }
     $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/18323033534?text=' + encodeURIComponent(META[lang].wa); });
     $('.lang').setAttribute('data-lang', lang);
     $$('[data-set-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang)); });
+    splitHeads(true);
     paintSpot(current, true);
     if (user) { try { localStorage.setItem('ch-lang', lang); } catch (e) {} }
   }
@@ -1093,6 +1208,22 @@ section { padding-block: var(--section); }
   next.addEventListener('click', function () { galMove(1); });
   strip.addEventListener('scroll', galState, { passive: true });
   window.addEventListener('resize', galState); galState();
+
+  /* Mobile menu stagger + dock */
+  $$('.m-link, .btn', panel).forEach(function (el, i) { el.style.setProperty('--n', i); });
+  var dock = $('#dock'), seen = { top: true, end: false };
+  function dockState() { var on = !seen.top && !seen.end; dock.classList.toggle('show', on); doc.body.classList.toggle('docked', on); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { seen.top = e[0].isIntersecting || e[0].boundingClientRect.top > 0; dockState(); }).observe($('.hero .cta-row'));
+    new IntersectionObserver(function (e) { seen.end = e[0].isIntersecting || e[0].boundingClientRect.top < 0; dockState(); }).observe($('.closing'));
+  }
+
+  /* Drag to scroll the gallery with a mouse */
+  var drag = null;
+  strip.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, left: strip.scrollLeft, moved: false }; });
+  window.addEventListener('pointermove', function (e) { if (!drag) return; var dx = e.clientX - drag.x; if (Math.abs(dx) > 4) { drag.moved = true; strip.classList.add('drag'); } strip.scrollLeft = drag.left - dx; });
+  window.addEventListener('pointerup', function () { if (!drag) return; strip.classList.remove('drag'); drag = null; });
+  strip.addEventListener('dragstart', function (e) { e.preventDefault(); });
 
   /* Initial language */
   var saved = null; try { saved = localStorage.getItem('ch-lang'); } catch (e) {}
