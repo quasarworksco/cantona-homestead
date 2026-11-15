@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your new website is ready | Cantona Homestead</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF3E1">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..800;1,500&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#FAF3E1; --paper-deep:#F3E7C6; --ribbon:#F6E2AE; --card:#FFFCF3; --ink:#2B1A08; --ink-soft:#5B4630; --line:#D9C79C; --olive:#56602A; --olive-deep:#343C1A; --olive-tint:#ECEBD3; --gold:#C48A1F; --gold-soft:#EBC56B; --bad:#9A3B1E; --wa:#0E7A3E;
+  --display:"Besley","Rockwell",Georgia,serif; --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif; --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --gutter:clamp(20px,5vw,56px); --section:clamp(64px,9vw,120px); --radius:18px; --arc:clamp(30px,5.5vw,84px); }
+*,*::before,*::after { box-sizing:border-box; }
+html { overflow-x:clip; scroll-behavior:smooth; -webkit-text-size-adjust:100%; scrollbar-color:#B9A678 var(--paper); }
+body { margin:0; background:var(--paper); color:var(--ink); font:400 1.0625rem/1.62 var(--body); -webkit-font-smoothing:antialiased; overflow-x:clip; }
+::selection { background:var(--gold-soft); color:var(--ink); }
+img { display:block; max-width:100%; height:auto; }
+a { color:inherit; text-underline-offset:.2em; }
+h1,h2,h3,p,ul,ol,dl,dd,figure { margin:0; } ul,ol { padding:0; list-style:none; }
+button { font:inherit; color:inherit; background:none; border:0; padding:0; cursor:pointer; }
+:focus-visible { outline:2.5px solid var(--olive); outline-offset:3px; border-radius:6px; }
+.on-dark :focus-visible { outline-color:var(--gold-soft); }
+h1,h2,h3 { font-family:var(--display); font-weight:700; letter-spacing:-.02em; text-wrap:balance; }
+h1 { font-size:clamp(2.3rem,6vw,4.4rem); line-height:1.08; letter-spacing:-.03em; }
+h2 { font-size:clamp(1.9rem,4vw,3.1rem); line-height:1.1; }
+h3 { font-size:clamp(1.2rem,1.9vw,1.45rem); line-height:1.25; letter-spacing:-.01em; }
+p { text-wrap:pretty; }
+.lede { font-size:clamp(1.1rem,1.5vw,1.25rem); line-height:1.55; color:var(--ink-soft); max-width:60ch; }
+.muted { color:var(--ink-soft); } .num { font-variant-numeric:tabular-nums lining-nums; }
+.wrap { width:min(1120px,100% - 2 * var(--gutter)); margin-inline:auto; }
+.icon { width:1.25em; height:1.25em; flex:none; fill:none; stroke:currentColor; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; }
+.icon.solid { fill:currentColor; stroke:none; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:0 26px; border-radius:999px; border:1.5px solid var(--ink); font-weight:600; font-size:1rem; line-height:1; text-decoration:none; white-space:nowrap; transition:transform 160ms var(--ease-out), background-color 180ms ease, color 180ms ease; }
+.btn:active { transform:scale(.97); }
+.btn-primary { background:var(--ink); color:var(--paper); box-shadow:0 10px 24px -14px rgba(43,26,8,.55); }
+.btn-lg { min-height:62px; padding:0 34px; font-size:1.1rem; }
+.btn-ghost { background:transparent; }
+.btn-gold { background:var(--gold-soft); border-color:var(--gold-soft); color:var(--ink); }
+.on-dark .btn-ghost { border-color:rgba(250,243,225,.55); color:var(--paper); }
+.btn .icon.arrow { transition:transform 220ms var(--ease-out); }
+@media (hover:hover) and (pointer:fine) { .btn-primary:hover { background:var(--olive-deep); border-color:var(--olive-deep); } .btn-ghost:hover { background:var(--ink); color:var(--paper); } .on-dark .btn-ghost:hover, .btn-gold:hover { background:var(--paper); color:var(--ink); border-color:var(--paper); } .btn:hover .icon.arrow { transform:translateX(3px); } }
+
+.top { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:18px; }
+.top img { width:120px; }
+.lang { display:inline-flex; border:1.5px solid var(--ink); border-radius:999px; padding:3px; position:relative; isolation:isolate; }
+.lang button { min-width:42px; height:36px; border-radius:999px; font-weight:700; font-size:.82rem; letter-spacing:.04em; position:relative; z-index:1; transition:color 200ms ease; }
+.lang button[aria-pressed="true"] { color:var(--paper); }
+.lang::before { content:""; position:absolute; z-index:0; top:3px; left:3px; width:42px; height:36px; border-radius:999px; background:var(--ink); transition:transform 240ms var(--ease-out); }
+.lang[data-lang="es"]::before { transform:translateX(42px); }
+
+.hero { padding-block:clamp(28px,5vw,64px) calc(var(--section) + var(--arc)); text-align:center; }
+.hero-logo { width:min(64vw,300px); margin:0 auto clamp(24px,4vw,40px); }
+.hero .lede { margin:22px auto 0; }
+.cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(26px,3.4vw,38px); }
+.hero .cta-row { justify-content:center; }
+.url { display:inline-block; margin-top:18px; font-weight:600; color:var(--ink-soft); }
+
+section { position:relative; padding-block:var(--section) calc(var(--section) + var(--arc)); background:var(--paper); }
+.sheet { margin-top:calc(var(--arc) * -1); border-radius:50% 50% 0 0 / var(--arc) var(--arc) 0 0; box-shadow:0 -22px 44px -34px rgba(43,26,8,.42); }
+.head { display:grid; gap:16px; margin-bottom:clamp(32px,4.5vw,56px); max-width:760px; }
+
+.versus { background:var(--olive-deep); color:var(--paper); }
+.versus .lede { color:#D9D9BC; }
+.big { display:grid; gap:14px; margin-bottom:clamp(32px,4vw,48px); }
+.big div { border:1px solid rgba(250,243,225,.22); border-radius:var(--radius); padding:22px 24px; }
+.big b { display:block; white-space:nowrap; font:700 clamp(2rem,3.4vw,2.9rem)/1.1 var(--display); letter-spacing:-.03em; color:var(--gold-soft); }
+.big span { display:block; margin-top:8px; color:#D9D9BC; }
+@media (min-width:760px) { .big { grid-template-columns:repeat(3,1fr); } }
+.cmp { border-top:1.5px solid rgba(250,243,225,.7); }
+.cmp-row { display:grid; gap:6px 28px; padding:18px 0; border-bottom:1px solid rgba(250,243,225,.18); }
+.cmp-row h3 { font:700 1.02rem/1.35 var(--body); letter-spacing:0; }
+.cmp-row p { display:flex; gap:10px; align-items:flex-start; }
+.cmp-row p .icon { margin-top:.22em; }
+.was { color:#E3B9A6; } .was .icon { color:#E08A66; }
+.now { color:var(--paper); font-weight:500; } .now .icon { color:var(--gold-soft); }
+.cmp-head { display:none; }
+@media (min-width:860px) { .cmp-row { grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.1fr); align-items:start; }
+  .cmp-head { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.1fr); gap:28px; padding-bottom:12px; font:700 .78rem/1 var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--gold-soft); } }
+.method { font-size:.9rem; color:#C5C7A4; margin-top:22px; max-width:86ch; }
+
+.cols { display:grid; gap:40px; }
+@media (min-width:860px) { .cols { grid-template-columns:1fr 1fr; gap:72px; } }
+.ticks li { display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); }
+.ticks .icon { color:var(--olive); margin-top:.2em; }
+.cols h3 { margin-bottom:10px; }
+.safe { background:var(--ribbon); }
+.safe .wrap { display:grid; gap:24px; }
+@media (min-width:860px) { .safe .wrap { grid-template-columns:1fr 1fr; gap:72px; align-items:center; } }
+
+.share-grid { display:grid; gap:36px; align-items:center; }
+.qr { background:var(--card); border:1.5px solid var(--ink); border-radius:var(--radius); padding:22px; width:min(100%,300px); box-shadow:0 30px 50px -40px rgba(43,26,8,.6); }
+.qr svg { display:block; width:100%; height:auto; }
+.qr p { text-align:center; font-weight:600; margin-top:14px; font-size:.95rem; word-break:break-all; }
+@media (min-width:760px) { .share-grid { grid-template-columns:auto 1fr; gap:64px; } }
+.steps { counter-reset:s; border-top:1.5px solid var(--ink); margin-top:24px; }
+.steps li { counter-increment:s; display:grid; grid-template-columns:2.2rem 1fr; gap:8px; padding:14px 0; border-bottom:1px solid var(--line); }
+.steps li::before { content:counter(s); font:700 1.3rem/1.3 var(--display); color:var(--olive); }
+
+.support { background:var(--ink); color:#EADFC4; padding-bottom:var(--section); }
+.support .lede { color:#CDBE9C; }
+.support .cta-row .btn-wa { background:var(--wa); border-color:var(--wa); color:#fff; }
+.foot { margin-top:clamp(40px,6vw,72px); padding-top:22px; border-top:1px solid rgba(234,223,196,.2); display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between; font-size:.9rem; color:#CDBE9C; }
+.foot a { text-decoration:underline; text-decoration-color:rgba(234,223,196,.45); }
+
+.js [data-r] { opacity:0; transform:translateY(14px); transition:opacity 600ms ease, transform 800ms var(--ease-out); transition-delay:calc(var(--d,0) * 70ms); }
+.js [data-r].in { opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .js [data-r] { transform:none; transition:opacity 300ms ease; } }
+@media print { .lang, .cta-row, .versus, .support { display:none; } .sheet { box-shadow:none; } }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.500 4.500 4.500L19 7.500"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.500 7 8.500 6 8.500-6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.500 2.600 5.400 5.900.800-4.300 4.100 1.100 5.800L12 16.800l-5.300 2.800 1.100-5.800-4.300-4.100 5.900-.800L12 3.500Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.030-.967-.273-.099-.471-.148-.670.150-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.150-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.010-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.360.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.870 9.870 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 0 1-1.510-5.260c.001-5.450 4.436-9.884 9.888-9.884 2.640 0 5.122 1.030 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.450-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.050 0C5.495 0 .160 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 0 0-3.480-8.413Z"/></symbol>
+</svg>
+
+<header class="wrap top">
+  <a href="../" aria-label="Cantona Homestead"><img src="../assets/logo-320.webp" width="320" height="162" alt="Cantona Homestead"></a>
+  <div class="lang" data-lang="en" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" aria-pressed="true" aria-label="English">EN</button>
+    <button type="button" data-set-lang="es" aria-pressed="false" aria-label="Español">ES</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1 data-i="h1">Your new website is ready</h1>
+    <p class="lede" data-i="lede">Same farm, same booking system, a much better front door. Here is what changed, what you get, and why it is worth making the switch.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" href="https://cantonahomestead.dgp-link.com/"><span data-i="open">Open the new site</span><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+      <button class="btn btn-ghost btn-lg" type="button" data-copy><svg class="icon"><use href="#i-copy"/></svg><span data-i="copy" data-copy-label>Copy link</span></button>
+    </div>
+    <span class="url">cantonahomestead.dgp-link.com</span>
+  </div>
+</section>
+
+<section class="versus sheet on-dark" aria-labelledby="vs-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="vs-h" data-r data-i="vsH">The old site made a phone work hard before showing a single goat</h2>
+      <p class="lede" data-r style="--d:1" data-i="vsLede">It did its job, and the booking system behind it is solid. The page in front of it was the problem: heavy, slow on phones and missing the basics that turn a visitor into a booking.</p>
+    </div>
+    <div class="big num" data-r>
+      <div><b>16×</b><span data-i="b1">lighter on first load: 6.4 MB before, 0.4 MB now</span></div>
+      <div><b>51 → 11</b><span data-i="b2">files a phone has to request before the page is ready</span></div>
+      <div><b>3.7 MB → 0</b><span data-i="b3">of JavaScript libraries downloaded to show the home page</span></div>
+    </div>
+    <div class="cmp-head" aria-hidden="true"><span></span><span data-i="colWas">Before</span><span data-i="colNow">Now</span></div>
+    <div class="cmp">
+      <div class="cmp-row" data-r><h3 data-i="c1">Speed on phones</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c1a">Google scored it 62 out of 100. The main content took 16.4 seconds to appear.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c1b">One light page with compressed photos that load only when needed. We will re-run Google's test on the final domain and send you the score.</span></p></div>
+      <div class="cmp-row" data-r><h3>WhatsApp</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c2a">None. A parent with a quick question had to call or fill out a form.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c2b">A floating button on every screen, plus WhatsApp in the contact list and footer.</span></p></div>
+      <div class="cmp-row" data-r><h3 data-i="c4">Birthday packages</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c4a">Prices split across two pages; the home page only showed "from $450".</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c4b">All three spaces side by side with price, capacity, what is included and add-ons.</span></p></div>
+      <div class="cmp-row" data-r><h3 data-i="c5">Hours and prices</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c5a">One line of small text under the buttons.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c5b">An admission ticket you cannot miss: days, hours, every price and the buy button.</span></p></div>
+      <div class="cmp-row" data-r><h3 data-i="c6">The ranch</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c6a">Long page of text with emoji headings.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c6b">An explorer: tap a play area, see its photo and what kids do there.</span></p></div>
+      <div class="cmp-row" data-r><h3>Google</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c7a">No sitemap, no robots file, 3 of 7 images with no description.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c7b">Sitemap and robots included, every photo described, business data with opening hours and service area.</span></p></div>
+      <div class="cmp-row" data-r><h3 data-i="c8">Look and feel</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c8a">A generic dark template that could belong to any business.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c8b">Built from your logo: its cream, brown, olive and gold, its hill in every section edge, and motion that feels calm, not flashy.</span></p></div>
+      <div class="cmp-row" data-r><h3 data-i="c9">Spanish</h3><p class="was"><svg class="icon"><use href="#i-x"/></svg><span data-i="c9a">A language switch in the menu.</span></p><p class="now"><svg class="icon"><use href="#i-check"/></svg><span data-i="c9b">Every sentence written in both languages; the site opens in the visitor's own.</span></p></div>
+    </div>
+    <p class="method" data-i="method">How we measured: page weight, file count and JavaScript are our own test of both home pages on a phone-size screen on November 15, 2026 (uncompressed sizes, first visit). The speed score, the 16.4 seconds and the image and sitemap findings come from the Google-based audit of cantonahomestead.com dated November 14, 2026.</p>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="got-h">
+  <div class="wrap">
+    <div class="head"><h2 id="got-h" data-r data-i="gotH">What you are getting</h2></div>
+    <div class="cols">
+      <div data-r>
+        <h3 data-i="secH">Sections</h3>
+        <ul class="ticks">
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s1">Cover with both main actions: book a birthday, buy tickets</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s2">Weekend hours and ticket prices</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s3">Birthday packages, inclusions and add-ons</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s4">Cantona Ranch play-area explorer</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s5">Field trips and Spirit Day fundraisers</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s6">Farmers market with the next date</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s7">Heritage Museum proposal, mission and values</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="s8">Photo gallery, driving directions and contact</span></li>
+        </ul>
+      </div>
+      <div data-r style="--d:1">
+        <h3 data-i="readyH">Already set up</h3>
+        <ul class="ticks">
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r1">WhatsApp button and tap-to-call phone</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r2">English and Spanish with one tap</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r3">Made for phones first, then tablets and desktop</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r4">Secure connection (https, the padlock)</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r5">Google basics: title, description, sitemap, business data</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r6">Tab icon from your logo and a photo preview when the link is shared</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r7">Google Maps and Waze buttons, directions from five towns</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span data-i="r8">Respects visitors who turn off animations</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="safe sheet" aria-labelledby="safe-h">
+  <div class="wrap">
+    <h2 id="safe-h" data-r data-i="safeH">Nothing you rely on changes</h2>
+    <p class="lede" data-r style="--d:1" data-i="safeP">Bookings, ticket sales, field-trip and Spirit Day requests, vendor applications and your private portal keep running on the system you already use. Every button on the new site opens the same pages your customers use today. Switching changes what people see first, not how you run the farm.</p>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="share-h">
+  <div class="wrap share-grid">
+    <div class="qr" data-r>
+      <svg id="qr" viewBox="-2 -2 33 33" role="img" aria-label="QR code for cantonahomestead.dgp-link.com" shape-rendering="crispEdges"><rect x="-2" y="-2" width="33" height="33" fill="#FFFCF3"/><path fill="#2B1A08" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM11 0h1v1h-1zM14 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM25 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM14 1h1v1h-1zM16 1h1v1h-1zM20 1h1v1h-1zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM13 2h1v1h-1zM17 2h1v1h-1zM19 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM17 3h1v1h-1zM18 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM10 4h1v1h-1zM14 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM20 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM9 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM23 8h1v1h-1zM26 8h1v1h-1zM28 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM27 9h1v1h-1zM28 9h1v1h-1zM0 10h1v1h-1zM3 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM19 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM0 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM0 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM12 12h1v1h-1zM13 12h1v1h-1zM16 12h1v1h-1zM19 12h1v1h-1zM22 12h1v1h-1zM28 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM7 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM15 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM23 14h1v1h-1zM28 14h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM28 16h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM5 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM26 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM11 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM28 18h1v1h-1zM2 19h1v1h-1zM3 19h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM9 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM16 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM8 21h1v1h-1zM11 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM28 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM28 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM12 23h1v1h-1zM14 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM28 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM9 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM28 24h1v1h-1zM0 25h1v1h-1zM2 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM9 25h1v1h-1zM10 25h1v1h-1zM11 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM26 25h1v1h-1zM28 25h1v1h-1zM0 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM21 26h1v1h-1zM24 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM12 27h1v1h-1zM14 27h1v1h-1zM16 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM25 27h1v1h-1zM0 28h1v1h-1zM1 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM12 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM28 28h1v1h-1z"/></svg>
+      <p>cantonahomestead.dgp-link.com</p>
+    </div>
+    <div>
+      <h2 id="share-h" data-r data-i="shareH">Share it</h2>
+      <p class="lede" data-r style="--d:1; margin-top:14px" data-i="shareP">Print the code for the ticket booth, party rooms and market tables, or send the link.</p>
+      <div class="cta-row" data-r style="--d:2">
+        <button class="btn btn-primary" type="button" data-copy><svg class="icon"><use href="#i-copy"/></svg><span data-i="copy" data-copy-label>Copy link</span></button>
+        <button class="btn btn-ghost" type="button" id="qr-dl"><svg class="icon"><use href="#i-download"/></svg><span data-i="qrdl">Download QR code</span></button>
+      </div>
+      <ol class="steps" data-r style="--d:3">
+        <li><span data-i="n1">Put the link in your Instagram bio and pin it on Facebook.</span></li>
+        <li><span data-i="n2">Add it as the website on your Google Business profile.</span></li>
+        <li><span data-i="n3">Ask happy families for a Google review after each party.</span></li>
+        <li><span data-i="n4">Tell us when to connect your Google Analytics and Facebook pixel, so visits keep being measured as they are today.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="support sheet on-dark" aria-labelledby="sup-h">
+  <div class="wrap">
+    <h2 id="sup-h" data-r data-i="supH">Changes or questions? Write to us</h2>
+    <p class="lede" data-r style="--d:1; margin-top:14px" data-i="supP">A price changed, a new market date, a photo you like better: send it and we update the site.</p>
+    <div class="cta-row" data-r style="--d:2">
+      <a class="btn btn-wa" href="https://wa.me/12398231738" target="_blank" rel="noopener"><svg class="icon solid"><use href="#i-wa"/></svg>WhatsApp +1 (239) 823-1738</a>
+      <a class="btn btn-ghost" href="mailto:info@dgpglobalgroup.com"><svg class="icon"><use href="#i-mail"/></svg>info@dgpglobalgroup.com</a>
+      <a class="btn btn-gold" href="https://g.page/r/CbcyuFX7hqvuEAI/review" target="_blank" rel="noopener"><svg class="icon"><use href="#i-star"/></svg><span data-i="review">Leave us a Google review</span></a>
+    </div>
+    <div class="foot">
+      <span>© 2026 Cantona Homestead</span>
+      <span><span data-i="credit">Designed by</span> <a href="https://dgpglobalgroup.com" target="_blank" rel="noopener">DGP Global Group</a></span>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+(function () {
+  var URL_SITE = 'https://cantonahomestead.dgp-link.com/';
+  var ES = {
+    h1: "Tu nuevo sitio web está listo",
+    lede: "La misma granja, el mismo sistema de reservas y una puerta de entrada mucho mejor. Aquí está lo que cambió, lo que recibes y por qué vale la pena hacer el cambio.",
+    open: "Abrir el sitio nuevo", copy: "Copiar enlace",
+    vsH: "El sitio anterior hacía sudar al celular antes de mostrar una sola cabrita",
+    vsLede: "Cumplía su función, y el sistema de reservas que tiene detrás es sólido. El problema era la página de enfrente: pesada, lenta en celulares y sin lo básico para convertir una visita en una reserva.",
+    b1: "más ligero al abrir: antes 6.4 MB, ahora 0.4 MB", b2: "archivos que el celular tiene que pedir antes de mostrar la página", b3: "de librerías JavaScript descargadas para mostrar el inicio",
+    colWas: "Antes", colNow: "Ahora",
+    c1: "Velocidad en celular", c1a: "Google le dio 62 de 100. El contenido principal tardaba 16.4 segundos en aparecer.", c1b: "Una sola página ligera, con fotos comprimidas que cargan solo cuando hacen falta. Repetiremos la prueba de Google en el dominio final y te enviaremos el puntaje.",
+    c2a: "No tenía. Un papá con una duda rápida tenía que llamar o llenar un formulario.", c2b: "Botón flotante en todas las pantallas, y WhatsApp también en contacto y en el pie.",
+    c4: "Paquetes de cumpleaños", c4a: "Precios repartidos en dos páginas; el inicio solo decía \"desde $450\".", c4b: "Los tres espacios lado a lado con precio, capacidad, qué incluye y extras.",
+    c5: "Horarios y precios", c5a: "Una línea de texto pequeño debajo de los botones.", c5b: "Un boleto de entrada imposible de ignorar: días, horas, todos los precios y el botón de compra.",
+    c6: "El rancho", c6a: "Una página larga de texto con emojis en los títulos.", c6b: "Un explorador: tocas un área de juego y ves su foto y qué hacen ahí los niños.",
+    c7a: "Sin sitemap, sin archivo robots y 3 de 7 imágenes sin descripción.", c7b: "Sitemap y robots incluidos, todas las fotos descritas y datos del negocio con horario y zona de servicio.",
+    c8: "Imagen", c8a: "Una plantilla oscura genérica que podría ser de cualquier negocio.", c8b: "Hecho a partir de tu logo: su crema, café, olivo y dorado, su colina en el borde de cada sección y movimiento tranquilo, sin exagerar.",
+    c9: "Español", c9a: "Un cambio de idioma en el menú.", c9b: "Cada frase escrita en los dos idiomas; el sitio abre en el idioma del visitante.",
+    method: "Cómo lo medimos: el peso, el número de archivos y el JavaScript son una prueba propia de las dos páginas de inicio en pantalla de celular, el 15 de noviembre de 2026 (tamaños sin comprimir, primera visita). El puntaje de velocidad, los 16.4 segundos y los hallazgos de imágenes y sitemap vienen de la auditoría basada en Google de cantonahomestead.com del 14 de noviembre de 2026.",
+    gotH: "Lo que recibes", secH: "Secciones",
+    s1: "Portada con las dos acciones principales: reservar cumpleaños y comprar boletos", s2: "Horario de fin de semana y precios de boletos", s3: "Paquetes de cumpleaños, qué incluyen y extras", s4: "Explorador de áreas de juego de Cantona Ranch", s5: "Excursiones escolares y Spirit Day", s6: "Farmers market con la próxima fecha", s7: "Propuesta del Museo Heritage, misión y valores", s8: "Galería de fotos, cómo llegar y contacto",
+    readyH: "Ya queda listo",
+    r1: "Botón de WhatsApp y teléfono que se toca para llamar", r2: "Inglés y español con un toque", r3: "Pensado primero para celular, luego tableta y escritorio", r4: "Conexión segura (https, el candado)", r5: "Lo básico para Google: título, descripción, sitemap y datos del negocio", r6: "Ícono de pestaña con tu logo y vista previa con foto al compartir el enlace", r7: "Botones de Google Maps y Waze, y rutas desde cinco ciudades", r8: "Respeta a quienes desactivan las animaciones",
+    safeH: "Nada de lo que usas cambia",
+    safeP: "Las reservas, la venta de boletos, las solicitudes de excursiones y Spirit Day, las aplicaciones de vendedores y tu portal privado siguen funcionando en el sistema que ya usas. Cada botón del sitio nuevo abre las mismas páginas que tus clientes usan hoy. El cambio es en lo que la gente ve primero, no en cómo operas la granja.",
+    shareH: "Compártelo", shareP: "Imprime el código para la taquilla, los salones de fiesta y las mesas del mercado, o envía el enlace.", qrdl: "Descargar código QR",
+    n1: "Pon el enlace en tu bio de Instagram y fíjalo en Facebook.", n2: "Agrégalo como sitio web en tu perfil de Google Business.", n3: "Pide una reseña en Google a las familias contentas después de cada fiesta.", n4: "Avísanos cuándo conectar tu Google Analytics y tu pixel de Facebook, para seguir midiendo las visitas como hoy.",
+    supH: "¿Cambios o dudas? Escríbenos", supP: "Cambió un precio, hay nueva fecha de mercado o te gusta más otra foto: envíalo y actualizamos el sitio.",
+    review: "Déjanos tu reseña en Google", credit: "Diseñado por", copied: "Enlace copiado", title: "Tu nuevo sitio web está listo | Cantona Homestead"
+  };
+  var doc = document, lang = 'en', EN = { copied: 'Link copied', title: doc.title };
+  var $$ = function (s) { return Array.prototype.slice.call(doc.querySelectorAll(s)); };
+  $$('[data-i]').forEach(function (el) { var k = el.getAttribute('data-i'); if (!(k in EN)) EN[k] = el.innerHTML; });
+  function t(k) { return lang === 'es' && ES[k] != null ? ES[k] : EN[k]; }
+  function setLang(next, user) {
+    lang = next === 'es' ? 'es' : 'en'; doc.documentElement.lang = lang; doc.title = t('title');
+    $$('[data-i]').forEach(function (el) { el.innerHTML = t(el.getAttribute('data-i')); });
+    doc.querySelector('.lang').setAttribute('data-lang', lang);
+    $$('[data-set-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang)); });
+    if (user) { try { localStorage.setItem('ch-lang', lang); } catch (e) {} }
+  }
+  $$('[data-set-lang]').forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang'), true); }); });
+
+  $$('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var label = btn.querySelector('[data-copy-label]');
+      var done = function () { label.textContent = t('copied'); setTimeout(function () { label.textContent = t('copy'); }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(URL_SITE).then(done, function () { prompt('', URL_SITE); });
+      else prompt('', URL_SITE);
+    });
+  });
+
+  doc.getElementById('qr-dl').addEventListener('click', function () {
+    var svg = doc.getElementById('qr').cloneNode(true); svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg'); svg.setAttribute('width', 1024); svg.setAttribute('height', 1024);
+    var img = new Image();
+    img.onload = function () {
+      var c = doc.createElement('canvas'); c.width = c.height = 1024; c.getContext('2d').drawImage(img, 0, 0, 1024, 1024);
+      var a = doc.createElement('a'); a.download = 'cantona-homestead-qr.png'; a.href = c.toDataURL('image/png'); a.click();
+    };
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(svg));
+  });
+
+  var targets = $$('[data-r]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    targets.forEach(function (el) { io.observe(el); });
+  } else targets.forEach(function (el) { el.classList.add('in'); });
+
+  var saved = null; try { saved = localStorage.getItem('ch-lang'); } catch (e) {}
+  var q = new URLSearchParams(location.search).get('lang');
+  if ((q || saved || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en')) === 'es') setLang('es');
+})();
+</script>
+</body>
+</html>
