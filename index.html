@@ -398,7 +398,7 @@ section { padding-block: var(--section); }
 .closing { text-align: center; padding-block: clamp(64px, 9vw, 120px); }
 .closing h2 { max-width: 16ch; margin-inline: auto; }
 .closing .cta-row { justify-content: center; }
-.closing-sprig { display: block; width: 44px; height: auto; margin: 0 auto 20px; }
+.closing-sprig { display: block; position: relative; width: 44px; height: auto; margin: 0 auto 20px; }
 
 /* Footer */
 .footer { background: var(--ink); color: #EADFC4; padding-block: clamp(56px, 7vw, 88px) 28px; }
@@ -484,8 +484,36 @@ html.no-splash .splash, html.no-splash .splash-back { display: none; }
 .marquee .sprig { width: 15px; height: auto; color: var(--gold-soft); flex: none; transform: rotate(18deg); }
 .visit { padding-top: calc(var(--section) + 30px); }
 
-/* Arched section tops, after the hill in the logo */
-.ranch, .market, .about { border-radius: 50% 50% 0 0 / clamp(26px, 5vw, 76px) clamp(26px, 5vw, 76px) 0 0; }
+/* Section seams: each section is a curved sheet sliding over the previous one (the hill in the logo) */
+:root { --arc: clamp(30px, 5.5vw, 84px); }
+:where(main > section) { background: var(--paper); }
+main > section { position: relative; padding-bottom: calc(var(--section) + var(--arc)); }
+main > section:not(.hero):not(.visit), .footer {
+  position: relative; margin-top: calc(var(--arc) * -1);
+  border-radius: 50% 50% 0 0 / var(--arc) var(--arc) 0 0;
+  box-shadow: 0 -22px 44px -34px rgba(43,26,8,.42);
+}
+main > .gallery { padding-bottom: calc(var(--arc) + 8px); }
+main > .closing { padding-bottom: calc(clamp(64px, 9vw, 120px) + var(--arc)); }
+main > .hero { padding-bottom: clamp(56px, 8vw, 104px); }
+.footer { padding-top: calc(clamp(56px, 7vw, 88px) + var(--arc) * .5); }
+.ranch::before, .market::before, .about:not(.closing)::before {
+  content: ""; position: absolute; left: 50%; top: 0; width: 66px; height: 66px; margin: -30px 0 0 -33px;
+  border-radius: 50%; background: inherit; box-shadow: 0 -10px 18px -12px rgba(43,26,8,.35);
+}
+.ranch::after, .market::after, .about:not(.closing)::after {
+  content: ""; position: absolute; left: 50%; top: 0; width: 22px; height: 33px; margin: -15px 0 0 -11px;
+  background: var(--olive);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 96' fill='none' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 94C32 70 30 46 34 6M32 78c-10-2-17-9-19-19 10 1 17 8 19 19ZM33 62c10-2 16-9 18-19-10 2-16 9-18 19ZM32 48c-9-3-14-10-15-19 9 2 14 9 15 19ZM33 34c8-3 12-9 13-17-8 3-12 9-13 17Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 96' fill='none' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 94C32 70 30 46 34 6M32 78c-10-2-17-9-19-19 10 1 17 8 19 19ZM33 62c10-2 16-9 18-19-10 2-16 9-18 19ZM32 48c-9-3-14-10-15-19 9 2 14 9 15 19ZM33 34c8-3 12-9 13-17-8 3-12 9-13 17Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.market::after { background: var(--gold-soft); }
+@keyframes sheet { from { transform: translateY(72px); } to { transform: none; } }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .js main > section:not(.hero):not(.visit), .js .footer { animation: sheet linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+  }
+}
 
 /* Word-by-word headings */
 .js h2[data-r] { opacity: 1; transform: none; }
